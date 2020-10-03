@@ -1,0 +1,28 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.cf {
+  clear: both;
+}
+
+header {
+  height: auto;
+  img {
+    height: 60px;
+    width: 300px;
+    margin-top: 15px;
+    margin-left: 50px;
+  }
+  p.discription {
+    margin-left: 50px;
+    display: block;
+    padding-top: 10px;
+    color: #999999;
+  }
+  nav {
+    font-size: 20px;
+    margin-right: 50px;
+    font-weight: bold;
+    float: right;
+  }
+}
