@@ -5,6 +5,10 @@
   clear: both;
 }
 
+ul {
+  list-style: none;
+}
+
 header {
   height: auto;
   img {
@@ -24,5 +28,27 @@ header {
     margin-right: 50px;
     font-weight: bold;
     float: right;
+  }
+}
+.sub_bar {
+  background-color: #F5FFE0;
+  border: 1px solid #C7D0B6;
+  height: 60px;
+  width: auto;
+  margin-top: 130px;
+  ul {
+    float: left;
+    li {
+      float: left;
+      border-left: 1px solid #C7D0B6;
+      border-right: 1px solid #C7D0B6;
+      a {
+        font-size: 20px;
+        color: #A0981A;
+        text-decoration: none;
+        line-height: 60px;
+        padding: 0 70px;
+      }
+    }
   }
 }
