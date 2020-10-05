@@ -1,0 +1,93 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.cf {
+  clear: both;
+}
+
+ul {
+  list-style: none;
+}
+
+.main {
+  width: 100%;
+  height: 800px;
+  background-image: image-url("main.jpg");
+  background-size: cover;
+  background-color:rgba(124, 49, 49, 0.6);
+  background-blend-mode:lighten;
+}
+
+header {
+  img {
+    margin-left: 30px;
+    margin-top: 10px;
+  }
+  ul {
+    float: right;
+    li {
+      float: left;
+      margin-top: 30px;
+      a {
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 30px;
+        display: inline-block;
+        text-decoration: none;
+        color: #039924;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+.description {
+  width: 500px;;
+  height: auto;
+  text-align: center;
+  margin-top: 330px;
+  color: white;
+  float: right;
+  h1 {
+    font-weight: bold;
+    opacity: 0.8;
+  }
+  p {
+    font-size: 20px;
+    font-weight: bold;
+    opacity: 0.8;
+  }
+}
+.gest {
+  .gest_login {
+    padding: 8px 13px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+  }
+  a {
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+  }  
+}
+.sub_content {
+  width: 100%;
+  height: auto;
+  background-color: #33CC99;
+  opacity: 0.7;
+  margin-top: 210px;
+  text-align: center;
+  h2 {
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 45px;
+  }
+  p {
+    padding-bottom: 5px;
+  }
+  img {
+    width: 300x;
+    height: 270px;
+    border-radius: 50%;
+  }
+}

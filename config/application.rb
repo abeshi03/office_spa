@@ -11,6 +11,14 @@ module OfficeSpa
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
+    config.generators do |g|
+      g.test_framework :rspec,
+       fixtures: false, # テストDBにレコード作成するファイルの作成をスキップ（初めだけ、のちに削除）。
+       view_specs: false, # ビューファイル用のスペックを作成しない。
+       helper_specs: false, # ヘルパーファイル用のスペックを作成しない。
+       routing_specs: false # routes.rb用のスペックファイル作成しない。
+    end
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
