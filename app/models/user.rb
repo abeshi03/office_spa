@@ -3,4 +3,5 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 200 },
                     format: { with: Const::VALID_EMAIL_REGEX },
                     uniqueness: true
+  has_secure_password
 end
