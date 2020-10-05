@@ -51,4 +51,14 @@ RSpec.describe User, type: :model do
     user2 = User.new(name: "test", email: "test@gmail.com")
     expect(user2).not_to be_valid
   end
+
+  it "password is blank" do
+    user.password_confirmation = ""
+    expect(user).not_to be_valid
+  end
+
+  it "password is characters 5" do
+    user.password_confirmation = "a" * 5
+    expect(user).not_to be_valid
+  end
 end
