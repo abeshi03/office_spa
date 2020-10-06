@@ -1,0 +1,30 @@
+<% provide(:title, 'Sign up') %>
+<div class="signup">
+  <%= render 'layouts/header' %>
+  <div class="signup_link">
+    <h1>新規登録</h1>
+    <div class="container"></div>
+      <div class="row-sm-12">
+        <div class="col-sm-12">
+          <%= form_with(model: @user, local: true) do |f| %>
+            <%= render 'shared/error_messages' %>
+            
+            <%= f.label :name, "フルネーム" %>
+            <%= f.text_field :name %>
+
+            <%= f.label :email, "メールアドレス" %>
+            <%= f.email_field :email %>
+
+            <%= f.label :password, "パスワード(6文字以上)" %>
+            <%= f.password_field :password %>
+
+            <%= f.label :password_confirmation, "パスワード(確認用)" %>
+            <%= f.password_field :password_confirmation %>
+
+            <%= f.submit "作成する", class: "btn btn-primary signup_btn" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
