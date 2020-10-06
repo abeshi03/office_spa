@@ -1,1 +1,26 @@
 <%= provide(:title, "ログイン") %>
+<div class="login">
+  <%= render 'layouts/header' %>
+  <div class="login_link">
+    <h1>ログイン</h1>
+    <div class="container">
+      <div class="row-sm-12">
+        <div class="col-sm-12">
+          <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+
+            <%= f.label :email, "メールアドレス" %>
+            <%= f.email_field :email %>
+
+            <%= f.label :password, "パスワード" %>
+            <%= f.password_field :password %>
+
+            <%= f.submit "Log in", class: "btn btn-primary btn_login" %>
+
+          <% end %>
+          <p class="create_link"><%= link_to "新規登録はこちら", signup_path %></p>
+          <p class="gest_link"><%= link_to "ゲストでログインの方はこちら", "#" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
