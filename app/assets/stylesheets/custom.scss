@@ -91,3 +91,35 @@ header {
     border-radius: 50%;
   }
 }
+.signup {
+  height: auto;
+  .signup_link {
+    text-align: center;
+    h1 {
+      font-weight: bold;
+    }
+  }
+}
+label {
+  width: 100%;
+  padding: 5px 0;
+}
+input {
+  width: 50%;
+  height: 40px;
+}
+@media (max-width: 1000px) {
+  label {
+    width: 100%;
+  }
+  input {
+    width: 80%;
+  }
+}
+.signup_btn {
+  margin-top: 10px;
+}
+footer {
+  height: 300px;
+  background-color: red;
+}
