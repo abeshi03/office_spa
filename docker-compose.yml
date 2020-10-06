@@ -25,3 +25,9 @@ services:
     tty: true
     links:
       - db
+      - chrome
+
+  chrome:
+    image: selenium/standalone-chrome:latest
+    ports:
+      - 4444:4444
