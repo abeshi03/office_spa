@@ -1,6 +1,6 @@
 <%= provide(:title, "ログイン") %>
+<%= render "layouts/header" %>
 <div class="login">
-  <%= render 'layouts/header' %>
   <div class="login_link">
     <h1>ログイン</h1>
     <div class="container">
@@ -14,7 +14,7 @@
             <%= f.label :password, "パスワード" %>
             <%= f.password_field :password %>
 
-            <%= f.submit "Log in", class: "btn btn-primary btn_login" %>
+            <%= f.submit "ログインする", class: "btn btn-primary btn_login" %>
 
           <% end %>
           <p class="create_link"><%= link_to "新規登録はこちら", signup_path %></p>
