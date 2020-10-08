@@ -22,7 +22,7 @@ RSpec.describe "Sessions", type: :system do
       fill_in "メールアドレス", with: user.email
       fill_in "パスワード", with: user.password
       click_on "ログインする"
-      expect(current_path).to eq user
+      expect(current_path).to eq "/users/#{user.id}"
     end
   end
 end
