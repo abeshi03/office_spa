@@ -9,6 +9,7 @@ gem 'bcrypt'
 gem 'bootstrap-sass', '3.4.1'
 gem 'rails-i18n'
 gem 'pry-rails'
+gem 'font-awesome-sass'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
