@@ -14,5 +14,8 @@
       <div class="alert alert-<%= message_type %> flash"><%= message %></div>
     <% end %>
     <%= yield %>
+    <% if logged_in? %>
+      <%= render "layouts/footer" %>
+    <% end %>
   </body>
 </html>
