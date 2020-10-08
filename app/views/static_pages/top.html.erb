@@ -1,17 +1,33 @@
 <div class="top_page">
   <div class="bar"></div>
   <div class="top_logo">
-    <%= image_tag 'logo.png'%>
+    <%= link_to image_tag('logo.png'), root_path %>
   </div>
   <div class="top_image">
     <%= image_tag "top_image.jpg" %> 
   </div>
   <div id="flex_link">
-    <div class="flex-item"><%= link_to "予約する", "#", class: "btn btn-success " %></div>
+    <div class="flex-item"><%= link_to "メニュー", "#", class: "btn btn-success" %></div>
     <div class="flex-item"><%= link_to "スタッフ", "#", class: "btn btn-success" %></div>
     <div class="flex-item"><%= link_to "お知らせ", "#", class: "btn btn-success" %></div>
     <div class="flex-item"><%= link_to "要望", "#", class: "btn btn-success" %></div>
     <div class="flex-item"><%= link_to "マイページ", "#", class: "btn btn-success" %></div>
-    <div class="flex-item"><%= link_to "ログアウト", "#", class: "btn btn-success" %></div>
-  </ul>
+    <div class="flex-item"><%= link_to "ログアウト", logout_path, method: :delete, class: "btn btn-success" %></div>
+    <div class="flex-item"><%= link_to "予約する", "#", class: "btn btn-success" %></div>
+  </div>
 </div>
+<div class="heading">
+  <p>Copyright オフィスパ All Rights Reserved</p>
+</div>
+<footer>
+  <ul>
+    <li>
+      <%= link_to top_path do %>
+        <span class="fa fa-facebook"></span>
+      <% end %>
+    </li>
+    <li>予約</li>
+    <li>マイページ</li>
+    <li>ほげほげ</li>
+  </ul>
+</footer>

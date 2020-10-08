@@ -19,8 +19,8 @@ RSpec.describe "Users", type: :system do
       fill_in "パスワード(6文字以上)", with: "hogehoge"
       fill_in "パスワード(確認用)", with: "hogehoge"
       click_button "作成する"
-      expect(page).to have_content "ユーザーを作成しました"
-      expect(page).to have_content "hogehoge"
+      expect(page).to have_content "さっそく予約してみよう！"
+      expect(current_path).to eq top_path
     end
 
     it "errors_full_messages test" do
