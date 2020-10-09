@@ -15,5 +15,10 @@ RSpec.describe "StaticPages", type: :system do
       find(".logo").click
       expect(current_path).to eq root_path
     end
+
+    it "login link test" do
+      click_on "ログイン"
+      expect(current_path).to eq login_path
+    end
   end
 end
