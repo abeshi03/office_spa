@@ -40,5 +40,12 @@ RSpec.describe "Sessions", type: :system do
       expect(page).to have_content "マイページ", count: 2
       expect(page).to have_content "ログアウト"
     end
+
+    it "checkbox test" do
+      check "ログイン情報を記憶する"
+      log_in_as user
+      delete logout_path
+      expect(cookies[:remember_token]).to be_nil
+    end
   end
 end

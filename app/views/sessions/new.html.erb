@@ -16,6 +16,11 @@
 
             <%= f.submit "ログインする", class: "btn btn-primary btn_login" %>
 
+            <%= f.label :remember_me, class: "checkbox inline" do %>
+              <%= f.check_box :remember_me, class: "box" %>
+              <span>ログイン情報を記憶する</p>
+            <% end %>
+
           <% end %>
           <p class="create_link"><%= link_to "新規登録はこちら", signup_path %></p>
           <p class="gest_link"><%= link_to "ゲストでログインの方はこちら", "#" %></p>
