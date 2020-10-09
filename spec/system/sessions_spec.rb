@@ -19,14 +19,13 @@ RSpec.describe "Sessions", type: :system do
     end
 
     it "login and logout success" do
-      fill_in "メールアドレス", with: user.email
-      fill_in "パスワード", with: user.password
-      click_on "ログインする"
+      log_in_as user
       expect(current_path).to eq top_path
       expect(page).to have_content "ログアウト"
       click_on "ログアウト"
       expect(current_path).to eq root_path
       expect(page).to have_content "ログアウトしました"
+      delete logout_path
     end
 
     it "signup link test" do
@@ -35,9 +34,7 @@ RSpec.describe "Sessions", type: :system do
     end
 
     it "footer test" do
-      fill_in "メールアドレス", with: user.email
-      fill_in "パスワード", with: user.password
-      click_on "ログインする"
+      log_in_as user
       expect(page).to have_content "ホーム"
       expect(page).to have_content "予約"
       expect(page).to have_content "マイページ", count: 2
