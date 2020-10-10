@@ -6,6 +6,11 @@ module LoginSupport
     fill_in "パスワード", with: user.password
     click_button "ログインする"
   end
+
+  def login_destination
+    log_in_as user
+    expect(current_path).to eq top_path
+  end
 end
 
 RSpec.configure do |config|
