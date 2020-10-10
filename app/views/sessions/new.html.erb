@@ -23,7 +23,7 @@
 
           <% end %>
           <p class="create_link"><%= link_to "新規登録はこちら", signup_path %></p>
-          <p class="gest_link"><%= link_to "ゲストでログインの方はこちら", "#" %></p>
+          <p class="gest_link"><%= link_to "ゲストでログインの方はこちら", gest_login_path, method: :post %></p>
         </div>
       </div>
     </div>
