@@ -66,4 +66,9 @@ RSpec.describe User, type: :model do
     user.authenticated?("")
     expect(user).to be_truthy
   end
+
+  it "description is characters 140" do
+    user.description = "a" * 141
+    expect(user).not_to be_valid
+  end
 end

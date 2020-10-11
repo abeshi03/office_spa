@@ -1,2 +1,13 @@
 <%= provide(:title, @user.name) %>
 <%= render "layouts/login_header" %>
+<div class="container">
+  <div class="user_page">
+    <div class="user_image">
+      <%= image_tag "user.jpg" %> 
+    </div>
+    <div class="user_name">
+      <%= @user.name %> 
+      <%= @user.description %>
+    </div>
+  </div>
+</div>
