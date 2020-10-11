@@ -7,6 +7,7 @@ AllCops:
     - 'bin/*'
     - 'config/environments/*'
     - 'config/application.rb'
+    - 'app/helpers/sessions_helper.rb'
     - 'config/initializers/*'
     - 'config/spring.rb'
     - 'lib/tasks/*'

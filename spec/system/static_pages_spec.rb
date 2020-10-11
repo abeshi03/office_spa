@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "StaticPages", type: :system do
   describe "StaticPages/home" do
+    let!(:user) { create :user }
+
     before do
       visit root_path
     end
@@ -19,6 +21,12 @@ RSpec.describe "StaticPages", type: :system do
     it "login link test" do
       click_on "ログイン"
       expect(current_path).to eq login_path
+    end
+
+    it "my page test" do
+      log_in_as user
+      find(".user_link").click
+      expect(current_path).to eq "/users/#{user.id}"
     end
   end
 end
