@@ -24,7 +24,7 @@ RSpec.describe "StaticPages", type: :system do
 
   describe "SatticPages/home" do
     let!(:user) { create :user }
-    
+
     it "my page test" do
       log_in_as user
       find(".user_link").click
