@@ -49,6 +49,4 @@ test:
 #
 production:
   <<: *default
-  database: office_spa_production
-  username: office_spa
-  password: <%= ENV['OFFICE_SPA_DATABASE_PASSWORD'] %>
+  url: <%= ENV['JAWSDB_URL']&.sub('mysql://', 'mysql2://') %>
