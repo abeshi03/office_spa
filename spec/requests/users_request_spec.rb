@@ -39,4 +39,19 @@ RSpec.describe "Users", type: :request do
       expect(response.body).to include "編集する"
     end
   end
+
+  describe "GET /show" do
+    let!(:user) { create :user }
+
+    before do
+      sign_in_as user
+      get user_path(user.id)
+    end
+
+    it "response test" do
+      expect(response).to have_http_status(200)
+      expect(response.body).to include user.name
+      expect(response.body).to include "編集する"
+    end
+  end
 end
