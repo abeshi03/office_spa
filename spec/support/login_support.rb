@@ -11,6 +11,10 @@ module LoginSupport
     log_in_as user
     expect(current_path).to eq top_path
   end
+
+  def sign_in_as(user)
+    post login_path, params: { session: { email: user.email,password: user.password } }
+  end
 end
 
 RSpec.configure do |config|

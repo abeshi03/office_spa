@@ -22,11 +22,12 @@ RSpec.describe "Users", type: :request do
       expect(response.body).to include "作成する"
     end
   end
-
-  describe "users/:id/edit" do
+  
+  describe "GET /edit" do
     let!(:user) { create :user }
 
     before do
+      sign_in_as user
       get edit_user_path(user.id)
     end
 

@@ -47,5 +47,10 @@ RSpec.describe "Sessions", type: :system do
       delete logout_path
       expect(cookies[:remember_token]).to be_nil
     end
+
+    it "don't go to user_edit_path without logging in" do
+      visit edit_user_path(user.id)
+      expect(page).to have_content "ログインしていません"
+    end
   end
 end
