@@ -52,6 +52,8 @@ RSpec.describe "Sessions", type: :system do
     it "don't go to user_edit_path without logging in" do
       visit edit_user_path(user.id)
       expect(page).to have_content "ログインしていません"
+      log_in_as user
+      expect(current_path).to eq edit_user_path(user.id)
     end
 
     it "other users' pages cannot be edited" do
