@@ -14,6 +14,9 @@ ul {
   width: 100%;
   text-align: center;
 }
+.logo_center {
+  text-align: center;
+}
 
 /* top_page */
 .main {
@@ -233,5 +236,35 @@ footer {
       text-align: center;
       display: block;
     }
+  }
+}
+
+/* user_page */
+.user_page {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+  img {
+    width: 400px;
+    height: 400px;
+  }
+  .user_name {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .edit_btn {
+    margin-top: 15px;
+  }
+}
+/* user_edit */
+.user_edit {
+  text-align: center;
+  h1 {
+    font-weight: bold;
+  }
+  .edit_btn {
+    width: 100%;
+    margin-top: 10px;
   }
 }

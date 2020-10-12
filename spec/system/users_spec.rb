@@ -33,13 +33,32 @@ RSpec.describe "Users", type: :system do
       expect(page).to have_content "メールアドレスを入力してください"
       expect(page).to have_content "メールアドレスは不正な値です"
       expect(page).to have_content "パスワードを入力してください"
-      expect(page).to have_content "パスワードは6文字以上で入力してください"
       fill_in "フルネーム", with: "test_user"
       fill_in "メールアドレス", with: "test_user@gmail.com"
       fill_in "パスワード(6文字以上)", with: "testuser"
       fill_in "パスワード(確認用)", with: "usertest"
       click_on "作成する"
       expect(page).to have_content "パスワード(確認用)とパスワードの入力が一致しません"
+    end
+  end
+
+  describe "/users/:id/edit" do
+    let!(:user) { create :user }
+
+    before do
+      log_in_as user
+      visit edit_user_path(user.id)
+    end
+
+    it "user edit" do
+      expect(current_path).to eq "/users/#{user.id}/edit"
+      fill_in "名前", with: "edit_user"
+      fill_in "メールアドレス", with: "edit@gmail.com"
+      fill_in "パスワード(６文字以上)", with: "password"
+      fill_in "パスワード(確認用)", with: "password"
+      click_on "編集する"
+      expect(current_path).to eq "/users/#{user.id}"
+      expect(page).to have_content "ユーザーを編集しました"
     end
   end
 end

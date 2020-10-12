@@ -5,16 +5,14 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 200 },
                     format: { with: Const::VALID_EMAIL_REGEX },
                     uniqueness: true
+  validates :description, length: { maximum: 140 }
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   def User.digest(string)
-    if cost = ActiveModel::SecurePassword.min_cost
-      BCrypt::Engine::MIN_COST
-    else
-      BCrypt::Engine.cost
-      BCrypt::Password.create(string, cost: cost)
-    end
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
   end
 
   def User.new_token

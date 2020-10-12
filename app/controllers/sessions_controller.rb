@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       remember user
-      redirect_to top_path
+      redirect_back_or top_path
     else
       flash.now[:danger] = "ログインに失敗しました"
       render "new"

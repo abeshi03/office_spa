@@ -22,4 +22,36 @@ RSpec.describe "Users", type: :request do
       expect(response.body).to include "作成する"
     end
   end
+
+  describe "GET /edit" do
+    let!(:user) { create :user }
+
+    before do
+      sign_in_as user
+      get edit_user_path(user.id)
+    end
+
+    it "edit label test" do
+      expect(response.body).to include "名前"
+      expect(response.body).to include "メールアドレス"
+      expect(response.body).to include "パスワード(６文字以上)"
+      expect(response.body).to include "パスワード(確認用)"
+      expect(response.body).to include "編集する"
+    end
+  end
+
+  describe "GET /show" do
+    let!(:user) { create :user }
+
+    before do
+      sign_in_as user
+      get user_path(user.id)
+    end
+
+    it "response test" do
+      expect(response).to have_http_status(200)
+      expect(response.body).to include user.name
+      expect(response.body).to include "編集する"
+    end
+  end
 end

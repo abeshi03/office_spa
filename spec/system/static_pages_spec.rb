@@ -21,4 +21,14 @@ RSpec.describe "StaticPages", type: :system do
       expect(current_path).to eq login_path
     end
   end
+
+  describe "SatticPages/home" do
+    let!(:user) { create :user }
+
+    it "my page test" do
+      log_in_as user
+      find(".user_link").click
+      expect(current_path).to eq "/users/#{user.id}"
+    end
+  end
 end

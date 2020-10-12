@@ -8,4 +8,3 @@ class GestLoginController < ApplicationController
     flash[:success] = "ゲストユーザーとしてログインしました"
   end
 end
-
