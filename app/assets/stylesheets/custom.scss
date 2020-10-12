@@ -268,3 +268,23 @@ footer {
     margin-top: 10px;
   }
 }
+/* user_index_page */
+.user_index {
+  margin-top: 100px;
+  ul li {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #F0F0F0;
+    img {
+      width: 100px;
+      height: 100px; 
+    }
+    a.user_name {
+      font-size: 30px;
+      font-weight: bold;
+      color: block;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+  }
+}

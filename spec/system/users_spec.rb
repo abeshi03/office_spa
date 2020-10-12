@@ -61,4 +61,38 @@ RSpec.describe "Users", type: :system do
       expect(page).to have_content "ユーザーを編集しました"
     end
   end
+
+  describe "/users" do
+    let!(:users) { create_list(:users, 5) }
+    let!(:admin) { create :admin }
+    let!(:other) { create :other }
+
+    it "users count test" do
+      log_in_as admin
+      visit users_path
+      expect(current_path).to eq users_path
+      users.each do |user|
+        expect(page).to have_content user.name, count: 5
+      end
+      expect(page).to have_content admin.name
+    end
+
+    it "redirect to root_path for non-administrators" do
+      log_in_as user
+      visit users_path
+      expect(current_path).to eq root_path
+    end
+  end
+
+  describe "destroy" do
+    let!(:admin) { create :admin }
+    let!(:user) { create :user }
+
+    it "user destroy test" do
+      log_in_as admin
+      visit users_path
+      #find(".delete").click
+      #expect(page).to have_content "ユーザーを削除しました"
+    end
+  end
 end

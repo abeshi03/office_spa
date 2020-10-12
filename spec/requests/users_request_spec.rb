@@ -54,4 +54,30 @@ RSpec.describe "Users", type: :request do
       expect(response.body).to include "編集する"
     end
   end
+
+  describe "GET /index" do
+    let!(:users) { create_list(:users, 5) }
+    let!(:admin) { create :admin }
+
+    before do
+      sign_in_as admin
+      get users_path
+    end
+
+    it "index user test" do
+      users.each do |user|
+        expect(response.body).to include user.name
+      end
+    end
+  end
+
+  describe "delete user" do
+    let!(:admin) { create :admin }
+
+    it "user delete success" do
+      sign_in_as admin
+      get users_path
+      expect(response.body).to include "削除する"
+    end
+  end
 end
