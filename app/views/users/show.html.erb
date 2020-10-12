@@ -7,5 +7,5 @@
   <div class="user_name">
     <%= @user.name %> 
   </div>
-  <%= link_to "編集する", "#", class: "btn btn-primary btn-lg edit_btn" %>
+  <%= link_to "編集する", edit_user_path(current_user), class: "btn btn-primary btn-lg edit_btn" %>
 </div>

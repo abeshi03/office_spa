@@ -22,4 +22,20 @@ RSpec.describe "Users", type: :request do
       expect(response.body).to include "作成する"
     end
   end
+
+  describe "users/:id/edit" do
+    let!(:user) { create :user }
+
+    before do
+      get edit_user_path(user.id)
+    end
+
+    it "edit label test" do
+      expect(response.body).to include "名前"
+      expect(response.body).to include "メールアドレス"
+      expect(response.body).to include "パスワード(６文字以上)"
+      expect(response.body).to include "パスワード(確認用)"
+      expect(response.body).to include "編集する"
+    end
+  end
 end
