@@ -10,6 +10,8 @@ gem 'bootstrap-sass', '3.4.1'
 gem 'rails-i18n'
 gem 'pry-rails'
 gem 'font-awesome-sass'
+gem 'will_paginate',           '3.1.8'
+gem 'bootstrap-will_paginate', '1.0.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server

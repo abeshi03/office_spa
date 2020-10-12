@@ -1,0 +1,14 @@
+<%= provide(:title, "ユーザー一覧") %>
+<%= render "layouts/login_header" %>
+<div class="container">
+  <%= will_paginate %>
+
+  <div class="user_index">
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+  </div>
+  <div class="cd"></div>
+
+  <%= will_paginate %>
+</div>
