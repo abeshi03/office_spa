@@ -15,6 +15,10 @@ module LoginSupport
   def sign_in_as(user)
     post login_path, params: { session: { email: user.email, password: user.password } }
   end
+
+  def not_open_page
+    expect(page).to have_content "ログインしていません"
+  end
 end
 
 RSpec.configure do |config|

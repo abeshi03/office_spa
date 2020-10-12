@@ -62,4 +62,18 @@ RSpec.describe "Sessions", type: :system do
       expect(current_path).to eq root_path
     end
   end
+
+  describe "Login restrictions" do
+    let!(:user) { create :user }
+
+    it "no_login users_path access" do
+      visit users_path
+      not_open_page
+    end
+
+    it "no_login edit_path" do
+      visit edit_user_path(user.id)
+      not_open_page
+    end
+  end
 end

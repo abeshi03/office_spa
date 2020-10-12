@@ -70,4 +70,14 @@ RSpec.describe "Users", type: :request do
       end
     end
   end
+
+  describe "delete user" do
+    let!(:admin) { create :admin }
+
+    it "user delete success" do
+      sign_in_as admin
+      get users_path
+      expect(response.body).to include "削除する"
+    end
+  end
 end

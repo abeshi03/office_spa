@@ -2,6 +2,6 @@
   <%= image_tag "user.jpg" %>
   <%= link_to user.name, user, class: "user_name" %>
   <% if current_user.admin? %>
-    | <%= link_to "削除する", user, method: :delete %>
+    | <%= link_to "削除する", user, method: :delete, data: { confirm: "本当に削除しますか?" }, class: "delete" %>
   <% end %>
 </li>
