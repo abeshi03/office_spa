@@ -61,4 +61,22 @@ RSpec.describe "Users", type: :system do
       expect(page).to have_content "ユーザーを編集しました"
     end
   end
+
+  describe "/users" do
+    let!(:users) { create_list(:users, 5) }
+    let!(:other) { create :other }
+
+    before do
+      log_in_as other
+      visit users_path
+    end
+
+    it "users count test" do
+      expect(current_path).to eq users_path
+      users.each do |user|
+        expect(page).to have_content user.name, count: 5
+      end
+      expect(page).to have_content other.name
+    end
+  end
 end

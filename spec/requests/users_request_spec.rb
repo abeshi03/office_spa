@@ -54,4 +54,18 @@ RSpec.describe "Users", type: :request do
       expect(response.body).to include "編集する"
     end
   end
+
+  describe "GET /index" do
+    let!(:users) { create_list(:users, 5) }
+
+    before do
+      get users_path
+    end
+
+    it "index user test" do
+      users.each do |user|
+        expect(response.body).to include user.name
+      end
+    end
+  end
 end
