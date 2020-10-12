@@ -57,8 +57,10 @@ RSpec.describe "Users", type: :request do
 
   describe "GET /index" do
     let!(:users) { create_list(:users, 5) }
+    let!(:admin) { create :admin }
 
     before do
+      sign_in_as admin
       get users_path
     end
 

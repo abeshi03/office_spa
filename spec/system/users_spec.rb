@@ -64,10 +64,10 @@ RSpec.describe "Users", type: :system do
 
   describe "/users" do
     let!(:users) { create_list(:users, 5) }
-    let!(:other) { create :other }
+    let!(:admin) { create :admin }
 
     before do
-      log_in_as other
+      log_in_as admin
       visit users_path
     end
 
@@ -76,7 +76,7 @@ RSpec.describe "Users", type: :system do
       users.each do |user|
         expect(page).to have_content user.name, count: 5
       end
-      expect(page).to have_content other.name
+      expect(page).to have_content admin.name
     end
   end
 end

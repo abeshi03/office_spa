@@ -1,4 +1,7 @@
 <li>
   <%= image_tag "user.jpg" %>
   <%= link_to user.name, user, class: "user_name" %>
+  <% if current_user.admin? %>
+    | <%= link_to "削除する", user, method: :delete %>
+  <% end %>
 </li>
