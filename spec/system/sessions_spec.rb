@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Sessions", type: :system do
   describe "login_page" do
     let!(:user) { create :user }
+    let!(:other) { create :other}
 
     before do
       visit login_path
@@ -51,6 +52,12 @@ RSpec.describe "Sessions", type: :system do
     it "don't go to user_edit_path without logging in" do
       visit edit_user_path(user.id)
       expect(page).to have_content "ログインしていません"
+    end
+
+    it "other users' pages cannot be edited" do
+      log_in_as user
+      visit edit_user_path(other.id)
+      expect(current_path).to eq root_path
     end
   end
 end

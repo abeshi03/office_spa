@@ -22,7 +22,7 @@ RSpec.describe "Users", type: :request do
       expect(response.body).to include "作成する"
     end
   end
-  
+
   describe "GET /edit" do
     let!(:user) { create :user }
 
