@@ -1,7 +1,7 @@
 class RequestsController < ApplicationController
 
   def index
-    @requests = Request.all.order(created_ad: :desc)
+    @requests = Request.all.order(created_at: :desc)
   end
 
   def new

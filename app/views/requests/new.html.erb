@@ -1,5 +1,4 @@
 <%= provide(:title, "投稿") %>
-<%= render "layouts/login_header" %>
 <div class="container">
   <div class="row-sm-12">
     <div class="col-sm-12">
@@ -8,7 +7,6 @@
           <h1>要望</h1>
           <P>新しいメニューの要望があったら投稿しよう</P>
         </div>
-
         <%= form_with(model: @request, local: true) do |f| %>
           <div class="field">
             <%= f.text_area :content, class: "request_firld", placeholder: "例、、ハンドマッサージのメニューを追加してほしい！" %>
