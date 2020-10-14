@@ -8,8 +8,9 @@
           <P>新しいメニューの要望があったら投稿しよう</P>
         </div>
         <%= form_with(model: @request, local: true) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
           <div class="field">
-            <%= f.text_area :content, class: "request_firld", placeholder: "例、、ハンドマッサージのメニューを追加してほしい！" %>
+            <%= f.text_area :content, id: "request_firld", placeholder: "例、、ハンドマッサージのメニューを追加してほしい！" %>
           </div>
           <%= f.submit "投稿する", class: "btn btn-primary request_btn" %>
         <% end %>

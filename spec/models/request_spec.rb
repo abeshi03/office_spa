@@ -11,7 +11,7 @@ RSpec.describe Request, type: :model do
     request.user = nil
     expect(request).not_to be_valid
   end
-  
+
   it "content present" do
     request.content = ""
     expect(request).not_to be_valid

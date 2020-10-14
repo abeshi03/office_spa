@@ -306,7 +306,7 @@ footer {
   .field {
     text-align: center;
   }
-  .request_firld {
+  #request_firld {
     margin-top: 10px;
     width: 50%;
     height: 180px;
@@ -315,7 +315,7 @@ footer {
     margin-top: 10px;
   }
   @media (max-width: 1000px) {
-    .request_firld {
+    #request_firld {
       width: 100%;
     }
   }
