@@ -15,7 +15,8 @@ ul {
   text-align: center;
 }
 .logo_center {
-  text-align: center;
+  margin-left: 25px;
+  margin-top: 5px;
 }
 
 /* top_page */
@@ -285,6 +286,37 @@ footer {
       color: block;
       text-decoration: none;
       margin-left: 10px;
+    }
+  }
+}
+
+/* new_request */
+.new_request {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+  }
+  p {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .field {
+    text-align: center;
+  }
+  .request_firld {
+    margin-top: 10px;
+    width: 50%;
+    height: 180px;
+  }
+  .request_btn {
+    margin-top: 10px;
+  }
+  @media (max-width: 1000px) {
+    .request_firld {
+      width: 100%;
     }
   }
 }
