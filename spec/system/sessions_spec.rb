@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Sessions", type: :system do
   describe "login_page" do
     let!(:user) { create :user }
-    let!(:other) { create :other}
+    let!(:other) { create :other }
 
     before do
       visit login_path
