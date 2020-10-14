@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-
+  before_action :logged_in_user
   def index
     @requests = Request.all.order(created_at: :desc)
   end
