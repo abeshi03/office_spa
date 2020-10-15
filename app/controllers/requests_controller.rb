@@ -1,7 +1,8 @@
 class RequestsController < ApplicationController
   before_action :logged_in_user
+  before_action :correct_user, only: [:destroy]
   def index
-    @requests = Request.all.order(created_at: :desc)
+    @requests = Request.paginate(page: params[:page]).order(created_at: :desc)
   end
 
   def new
@@ -38,5 +39,10 @@ class RequestsController < ApplicationController
 
   def request_params
     params.require(:request).permit(:content)
+  end
+
+  def correct_user
+    @request = current_user.requests.find(params[:id])
+    redirect_to top_path if @request.nil?
   end
 end

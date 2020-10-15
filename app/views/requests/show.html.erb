@@ -2,8 +2,11 @@
 <div class="request_show">
   <div class="container">
     <div class="image_user">
-      <h2>投稿者<%= @request.user.name %></h2>
+      <h2>投稿者<%= link_to @request.user.name, requests_path %></h2>
       <p class="show_content"><%= @request.content %></p>
+      <% if current_user.id == @request.user_id %>
+        <%= link_to "要望を削除する", @request, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+      <% end %>
     </div>
   </div>
   <div class="cf"></div>
