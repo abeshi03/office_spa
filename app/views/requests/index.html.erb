@@ -1,5 +1,7 @@
 <%= provide(:title, "投稿一覧") %>
 <div class="request_wrapper">
+  <h1>要望一覧( <%= @requests.count %> )</h1>
+  <%= link_to "要望を投稿する", new_request_path, class: "btn_request" %>
   <ul>
     <%= render @requests %>
   </ul>

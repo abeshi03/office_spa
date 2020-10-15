@@ -20,4 +20,23 @@ RSpec.describe "Requests", type: :request do
       expect(response.body).to include "新しいメニューの要望があったら投稿しよう"
     end
   end
+
+  describe "GET /index" do
+    let!(:other) { create :other }
+    let!(:request) { create :request }
+
+    before do
+      sign_in_as other
+      get requests_path
+    end
+
+    it "link is success" do
+      expect(response).to have_http_status(:success)
+    end
+
+    it "request content test" do
+      expect(response.body).to include request.user.name
+      expect(response.body).to include request.content
+    end
+  end
 end

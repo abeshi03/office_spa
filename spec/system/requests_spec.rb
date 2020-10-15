@@ -27,5 +27,25 @@ RSpec.describe "Requests", type: :system do
       click_on "投稿する"
       expect(page).to have_content "要望は200文字以内で入力してください"
     end
+
+    it "go to request index success" do
+      click_on "要望一覧はこちら"
+      expect(current_path).to eq requests_path
+    end
+
+    describe "request/index" do
+      let!(:second_user) { create :second_user }
+      let!(:request) { create :request }
+
+      before do
+        log_in_as second_user
+        visit requests_path
+      end
+
+      it "new_request_path link test" do
+        click_on "要望を投稿する"
+        expect(current_path).to eq new_request_path
+      end
+    end
   end
 end

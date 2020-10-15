@@ -332,6 +332,13 @@ a.requests_index_btn {
   width: 100%;
   height: auto;
   margin-top: 10px;
+  h1 {
+    font-weight: bold;
+    margin-left: 38px;
+  }
+  a.btn_request {
+    margin-left: 38px;
+  }
   ul {
     li {
       border-bottom: 1px solid #EDEDED;
