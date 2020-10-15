@@ -18,6 +18,22 @@ class RequestsController < ApplicationController
     end
   end
 
+  def show
+    @request = Request.find(params[:id])
+  end
+
+  def destroy
+    @request = Request.find(params[:id])
+    if @request&.user_id == current_user.id
+      @request.destroy
+      redirect_to requests_path
+      flash[:success] = "要望を削除しました"
+    else
+      flash[:danger] = "こちらの要望は削除できません"
+      redirect_to top_path
+    end
+  end
+
   private
 
   def request_params
