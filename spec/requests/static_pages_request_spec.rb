@@ -19,7 +19,7 @@ RSpec.describe "StaticPages", type: :request do
 
   describe "GET /top" do
     let!(:user) { create :user }
-    
+
     before do
       sign_in_as user
       get top_path

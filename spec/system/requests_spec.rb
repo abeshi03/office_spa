@@ -46,6 +46,11 @@ RSpec.describe "Requests", type: :system do
         click_on "要望を投稿する"
         expect(current_path).to eq new_request_path
       end
+
+      it "request_show link test" do
+        first(".comment-icon").click
+        expect(current_path).to eq requests_path
+      end
     end
   end
 end

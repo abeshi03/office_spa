@@ -371,3 +371,20 @@ a.requests_index_btn {
     }
   }
 }
+/* request_show */
+.request_show {
+  height: auto;
+  margin-top: 20px;
+  text-align: center;
+  .image_user {
+    img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  span.request_show_user {
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 5px;
+  }
+}
