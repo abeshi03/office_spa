@@ -320,3 +320,47 @@ footer {
     }
   }
 }
+a.requests_index_btn {
+  margin-top: 10px;
+  display: inline-block;
+}
+/* request_index */
+.requests {
+  margin-top: 5px;
+}
+.request_wrapper {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  ul {
+    li {
+      border-bottom: 1px solid #EDEDED;
+      display: block;
+      .request_image img {
+        width: 60px;
+        height: 60px;
+        float: left;
+      }
+      .request_heading {
+        display: inline-block;
+        p.request_user {
+          font-weight: bold;
+          margin-left: 5px;
+          font-size: 20px;
+        }
+        p.request_content {
+          font-size: 15px;
+          margin-left: 5px;
+        }
+        i.fa-comment {
+          margin-left: 5px;
+          display: inline-block;
+        }
+        span.request_time {
+          margin-left: 5px;
+          color: gray;
+        }
+      }
+    }
+  }
+}

@@ -2,10 +2,15 @@
   <div class="requests">
     <div class="request_image">
       <%= image_tag "user.jpg" %>
-      <span><%= request.user.name %></span>
     </div>
-    <div class="request_content">
-      <%= request.content %>
+    <div class="request_heading">
+      <p class="request_user"><%= request.user.name %></p>
+      <p class="request_content"><%= request.content %></P>
+      <span class="request_time"><%= time_ago_in_words(request.created_at) %> 前</span>
+      <%= link_to "#" do %>
+        <%= icon("far", "comment", class: "fa-comment") %>
+      <% end %>
     </div>
+    <div class="cf"></div>
   </div>
 </li>
