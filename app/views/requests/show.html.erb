@@ -11,13 +11,7 @@
     <div class="cf"></div>
     <div class="row-sm-12">
       <div class="col-sm-12">
-        <%= form_with(model: [@request, @comment], local: true ) do |f| %>
-          <%= render "shared/error_messages", object: f.object %>
-          <%= f.text_area :comment_content, placeholder: "コメントを入力", class: "comment_form" %>
-          <div class="comment_btn">
-            <%= f.submit "投稿", class: "btn btn-primary btn-sm" %>
-          </div>
-        <% end %>
+        <%= render "comments/comment_form", request: @request, comment: @comment %>
       </div>
     </div>
   </div>
