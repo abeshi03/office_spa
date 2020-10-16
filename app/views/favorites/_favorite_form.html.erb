@@ -1,9 +1,9 @@
-<% if !Favorite.exists?(user_id: current_user.id, request_id: @request.id) %>
-  <%= link_to request_add_path(@request),method: :post, remote: true do %>
+<% if !Favorite.exists?(user_id: current_user.id, request_id: request.id) %>
+  <%= link_to request_add_path(request),method: :post, remote: true do %>
     <%= icon("fas", "heart", class: "like-btn") %>
   <%end %>
 <% else %>
-  <%= link_to request_add_path(@request),method: :delete, remote: true do %>
+  <%= link_to request_add_path(request),method: :delete, remote: true do %>
     <%= icon("fas", "heart", class: "unlike-btn") %>
   <% end %>
 <% end %>
