@@ -9,3 +9,7 @@ ja:
       request:
         content: 要望
         user_id: ユーザー
+      comment:
+        comment_content: コメント
+        user_id: ユーザー
+        request_id: 要望

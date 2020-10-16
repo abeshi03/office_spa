@@ -8,14 +8,14 @@ class CommentsController < ApplicationController
       flash[:success] = "コメントしました"
       redirect_to @comment.request
     else
-      @request = Request.find(params[:request_id])  
+      @request = Request.find(params[:request_id])
       @comments = @request.comments
       render template: 'requests/show'
     end
   end
 
   def destroy
-    
+
   end
 
   private
