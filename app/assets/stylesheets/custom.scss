@@ -404,6 +404,11 @@ textarea.comment_form {
   display: inline-block;
   width: 50%;
 }
+@media (max-width: 1000px) {
+  #comment_area {
+    width: 100%;
+  }
+}
 .comment_index {
   margin-top: 10px;
   border: 1px solid #efefef;

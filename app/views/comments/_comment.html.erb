@@ -15,7 +15,7 @@
     <% if current_user == comment.user %>
       <div class="comment_delete ">
         <%= link_to "コメントを削除", request_comment_path(request, comment), remote: true,
-                        method: :delete, data: {confirm: "本当に削除しますか？"} %>
+                        class: "comment_delete", method: :delete, data: {confirm: "本当に削除しますか？"} %>
       </div>
     <% end %>
     <div class="cf"></div>
