@@ -4,6 +4,9 @@
     <div class="image_user">
       <h2>投稿者<%= link_to @request.user.name, requests_path %></h2>
       <p class="show_content"><%= @request.content %></p>
+      <div id="favorite">
+        <%= render "favorites/favorite_form" %>
+      </div>
       <% if current_user.id == @request.user_id %>
         <%= link_to "要望を削除する", @request, method: :delete, data: { confirm: "本当に削除しますか？" } %>
       <% end %>
