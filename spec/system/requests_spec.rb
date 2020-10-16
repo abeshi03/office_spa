@@ -63,11 +63,11 @@ RSpec.describe "Requests", type: :system do
       visit request_path(request.id)
     end
 
-    it "should be request name" do
+    it "request name" do
       expect(page).to have_content request.user.name
     end
 
-    it "should be request content" do
+    it "request content" do
       expect(page).to have_content request.content
     end
 
