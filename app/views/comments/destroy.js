@@ -1,0 +1,1 @@
+$('#comment_box').remove();
