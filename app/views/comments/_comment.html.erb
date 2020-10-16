@@ -1,0 +1,23 @@
+<div class="comment_index ">
+  <div class="comment_box">
+    <%= image_tag "user.jpg" %>
+    <div class="comment_name ">
+      <%= link_to comment.user.name, comment.user %>
+    </div>
+    <div class="comment_content">
+      <%= comment.comment_content %>
+    </div>
+    <div class="cf"></div>
+    <div class="date_time">
+      <%= time_ago_in_words(comment.created_at)+"前" %>
+    </div>
+
+    <% if current_user == comment.user %>
+      <div class="comment_delete ">
+        <%= link_to "コメントを削除", "#",
+                        method: :delete, data: {confirm: "本当に削除しますか？"} %>
+      </div>
+    <% end %>
+    <div class="cf"></div>
+  </div>
+</div>
