@@ -21,6 +21,8 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @comment = Comment.new
+    @comments = @request.comments.order(created_at: :desc)
   end
 
   def destroy
@@ -42,7 +44,7 @@ class RequestsController < ApplicationController
   end
 
   def correct_user
-    @request = current_user.requests.find(params[:id])
+    @request = current_user.requests.find_by(id: params[:id])
     redirect_to top_path if @request.nil?
   end
 end

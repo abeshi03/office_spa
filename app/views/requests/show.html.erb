@@ -4,10 +4,21 @@
     <div class="image_user">
       <h2>投稿者<%= link_to @request.user.name, requests_path %></h2>
       <p class="show_content"><%= @request.content %></p>
+      <div id="favorite">
+        <%= render "favorites/favorite_form", request: @request %>
+      </div>
       <% if current_user.id == @request.user_id %>
         <%= link_to "要望を削除する", @request, method: :delete, data: { confirm: "本当に削除しますか？" } %>
       <% end %>
     </div>
+    <div class="cf"></div>
+    <div class="row-sm-12">
+      <div class="col-sm-12">
+        <%= render "comments/comment_form", request: @request, comment: @comment %>
+        <div id="comment_area">
+          <%= render @comments, request: @request, comment: @comment %>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="cf"></div>
 </div>
