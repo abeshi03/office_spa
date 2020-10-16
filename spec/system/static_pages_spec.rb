@@ -22,13 +22,23 @@ RSpec.describe "StaticPages", type: :system do
     end
   end
 
-  describe "SatticPages/home" do
+  describe "SatticPages/top" do
     let!(:user) { create :user }
 
-    it "my page test" do
-      log_in_as user
-      find(".user_link").click
-      expect(current_path).to eq "/users/#{user.id}"
+    context "for user" do
+      before do
+        log_in_as user
+      end
+
+      it "my page test" do
+        find(".user_link").click
+        expect(current_path).to eq "/users/#{user.id}"
+      end
+
+      it "request page link test" do
+        click_on "要望"
+        expect(current_path).to eq new_request_path
+      end
     end
   end
 end

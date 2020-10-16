@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <%= render "layouts/login_header" %>
+    <% end %>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %> flash"><%= message %></div>
     <% end %>

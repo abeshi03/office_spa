@@ -6,3 +6,6 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード(確認用)
+      request:
+        content: 要望
+        user_id: ユーザー

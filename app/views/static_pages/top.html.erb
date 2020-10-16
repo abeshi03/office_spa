@@ -1,5 +1,4 @@
 <div class="top_page">
-  <%= render "layouts/login_header" %>
   <div class="top_image">
     <%= image_tag "top_image.jpg" %> 
   </div>
@@ -7,7 +6,7 @@
     <div class="flex-item"><%= link_to "メニュー", "#", class: "btn btn-success" %></div>
     <div class="flex-item"><%= link_to "スタッフ", "#", class: "btn btn-success" %></div>
     <div class="flex-item"><%= link_to "お知らせ", "#", class: "btn btn-success" %></div>
-    <div class="flex-item"><%= link_to "要望", "#", class: "btn btn-success" %></div>
+    <div class="flex-item"><%= link_to "要望", new_request_path, class: "btn btn-success" %></div>
     <div class="flex-item"><%= link_to "マイページ", current_user, class: "btn btn-success user_link" %></div>
     <div class="flex-item"><%= link_to "口コミ", "#", class: "btn btn-success" %></div>
     <div class="flex-item"><%= link_to "予約する", "#", class: "btn btn-success" %></div>

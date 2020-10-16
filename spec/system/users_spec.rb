@@ -91,8 +91,8 @@ RSpec.describe "Users", type: :system do
     it "user destroy test" do
       log_in_as admin
       visit users_path
-      #find(".delete").click
-      #expect(page).to have_content "ユーザーを削除しました"
+      first(".delete").click
+      expect(page).to have_content "ユーザーを削除しました"
     end
   end
 end
