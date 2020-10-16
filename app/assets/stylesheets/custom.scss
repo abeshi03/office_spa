@@ -388,3 +388,13 @@ a.requests_index_btn {
     margin-left: 5px;
   }
 }
+textarea.comment_form {
+  width: 50%;
+  margin-top: 10px;
+  height: 100px;
+}
+@media (max-width: 1000px) {
+  textarea.comment_form {
+    width: 100%;
+  }
+}

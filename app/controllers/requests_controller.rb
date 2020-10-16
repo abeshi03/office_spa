@@ -21,6 +21,8 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @comment = Comment.new
+    @comments = @request.comments.order(created_at: :desc)
   end
 
   def destroy
