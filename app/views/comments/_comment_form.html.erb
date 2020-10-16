@@ -1,4 +1,4 @@
-<%= form_with(model: [request, comment], local: true ) do |f| %>
+<%= form_with(model: [request, comment]) do |f| %>
   <%= render "shared/error_messages", object: f.object %>
   <%= f.text_area :comment_content, placeholder: "コメントを入力", class: "comment_form" %>
   <div class="comment_btn">
