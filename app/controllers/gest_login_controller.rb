@@ -5,6 +5,5 @@ class GestLoginController < ApplicationController
     end
     log_in user
     redirect_to top_path
-    flash[:success] = "ゲストユーザーとしてログインしました"
   end
 end
