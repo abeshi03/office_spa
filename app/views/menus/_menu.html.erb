@@ -1,6 +1,13 @@
-<li>
-  <%= menu.name %>
+<div class="menu-left">
+  <p>全員</p>
+</div>
+<div class="category">
   <%= menu.category %>
-  <%= menu.description %>
+</div>
+<div class="menu_name">
+  <%= menu.name %>
+</div>
+<div class="menu_image">
   <%= image_tag menu.display_image if menu.image.attached? %>
-</li>
+</div>
+<div class="cf"></div>

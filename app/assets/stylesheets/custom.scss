@@ -561,3 +561,35 @@ input#menu_image {
     width: 100%;
   }
 }
+
+/* menu index */
+.menu_list {
+  border: 1px solid #CCCCCC;
+  margin-top: 100px;
+  width: 100%;
+  .menu-left {
+    writing-mode: vertical-rl;
+    font-size: 20px;
+    height: 300px;
+    padding-top: 140px;
+    background-color: #6DCE96;
+    color: white;
+    float: left;
+  }
+  .category {
+    float: left;
+    background-color: #039924;
+    color: white;
+    width: auto;
+    height: 30px;
+    font-size: 15px;
+    padding: 0 5px;
+    line-height: 30px;
+    margin: 10px 0 0 10px;
+  }
+  .menu_name {
+    font-size: 30px;
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+}
