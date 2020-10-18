@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :request_favorite, through: :favorites
   before_save { self.email = email.downcase }
-  validates :name, presence: true, length: { maximum: 30 }
+  validates :name,  presence: true, length: { maximum: 30 }
   validates :email, presence: true, length: { maximum: 200 },
                     format: { with: Const::VALID_EMAIL_REGEX },
                     uniqueness: true
