@@ -540,3 +540,20 @@ textarea.comment_form {
     }
   }
 }
+
+/* menu new */
+#menu_area {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 10px;
+  height: 80px;
+}
+a.menus_index_btn {
+  margin-top: 5px;
+  display: inline-block;
+}
+@media (max-width: 1000px) {
+  #menu_area {
+    width: 100%;
+  }
+}
