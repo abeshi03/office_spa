@@ -19,6 +19,10 @@
             <%= f.label :description, "説明" %>
             <%= f.text_area :description, id: "menu_area" %>
           </div>
+          
+          <span class="image">
+            <%= f.file_field :image %>
+          </span>
           <%= f.submit "メニューを追加する", class: "btn btn-primary menu_btn" %>
         <% end %>
         <%= link_to "メニュー一覧はこちら", menus_path, class: "menus_index_btn" %>

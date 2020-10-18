@@ -5,6 +5,7 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
+gem 'active_storage_validations', '0.8.2'
 gem 'bcrypt'
 gem 'bootstrap-sass', '3.4.1'
 gem 'rails-i18n'

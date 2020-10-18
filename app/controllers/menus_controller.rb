@@ -12,6 +12,7 @@ class MenusController < ApplicationController
 
   def create
     @menu = current_user.menus.build(menu_params)
+    @menu.image.attach(params[:menu][:image])
     if @menu.save
       redirect_to menus_path
       flash[:success] = "メニューが作成されました"
@@ -22,16 +23,14 @@ class MenusController < ApplicationController
 
   def destroy
     @menu = Menu.find(params[:id])
-    if current_user.admin?
-      @menu.destroy
-      flash[:success] = "メニューを削除しました"
-      redirect_to menus_path
-    end
+    @menu.destroy
+    flash[:success] = "メニューを削除しました"
+    redirect_to menus_path
   end
 
   private
 
   def menu_params
-    params.require(:menu).permit(:name, :description, :category)
+    params.require(:menu).permit(:name, :description, :category, :image)
   end
 end
