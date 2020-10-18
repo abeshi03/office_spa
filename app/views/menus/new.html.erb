@@ -1,1 +1,28 @@
 <%= provide(:title, "メニュー作成") %>
+<div class="container">
+  <div class="row-sm-12">
+    <div class="col-sm-12">
+      <div class="new_request">
+        <div class="request_top">
+          <h1>メニュー</h1>
+        </div>
+        <%= form_with(model: @menu, local: true) do |f| %>
+          <%= render "shared/error_messages", object: f.object %>
+          
+          <%= f.label :name, "メニュー名" %>
+          <%= f.text_field :name %> 
+
+          <%= f.label :category, "カテゴリー" %>
+          <%= f.text_field :category%>
+
+          <div class="field">
+            <%= f.label :description, "説明" %>
+            <%= f.text_area :description, id: "menu_firld" %>
+          </div>
+          <%= f.submit "メニューを追加する", class: "btn btn-primary menu_btn" %>
+        <% end %>
+        <%= link_to "メニュー一覧はこちら", menus_path, class: "menus_index_btn" %>
+      </div>
+    </div>
+  </div>
+</div>

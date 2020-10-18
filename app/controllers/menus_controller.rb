@@ -11,10 +11,12 @@ class MenusController < ApplicationController
   end
 
   def create
-    @menu = Menu.new(menu_params)
+    @menu = current_user.menus.build(menu_params)
     if @menu.save
       redirect_to menus_path
       flash[:success] = "メニューが作成されました"
+    else
+      render "new"
     end
   end
 
@@ -30,6 +32,6 @@ class MenusController < ApplicationController
   private
 
   def menu_params
-    params.require(:menu).permit(:name, :category, :description)
+    params.require(:menu).permit(:name, :description, :category)
   end
 end

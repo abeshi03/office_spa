@@ -13,3 +13,9 @@ ja:
         comment_content: コメント
         user_id: ユーザー
         request_id: 要望
+      menu:
+        name: メニュー名
+        description: 説明
+        category: カテゴリー
+        user_id: ユーザー
+        manu_id: メニュー
