@@ -567,6 +567,9 @@ input#menu_image {
   width: 100%;
   height: auto;
   margin-top: 10px;
+  img {
+    width: 100%;
+  }
   h2 {
     padding-top: 20px;
   }
@@ -597,4 +600,31 @@ input#menu_image {
     margin-top: 5px;
     display: inline-block;
   }
+}
+@media (max-width: 1200px) {
+  .menu_index {
+    img {
+      width: 100%;
+    }
+  }
+  .menu_name {
+    margin-left: 50px;
+  }
+  .menu_description {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 1000px) {
+  .menu_index {
+    img {
+      width: 100%;
+    }
+  }
+  .menu_name {
+    margin-left: 5px;
+  }
+  .menu_description {
+    margin-left: 5px;
+  }
+  
 }
