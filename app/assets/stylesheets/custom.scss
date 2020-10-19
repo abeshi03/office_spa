@@ -592,4 +592,18 @@ input#menu_image {
     margin-top: 40px;
     margin-left: 40px;
   }
+  .menu_image {
+    img {
+      margin-left: 10px;
+    }
+    span {
+      font-size: 25px;
+      display: inline-block;
+    }
+  }
+  .conditions {
+    margin-left: 10px;
+    display: inline-block;
+    margin-top: 5px;
+  }
 }

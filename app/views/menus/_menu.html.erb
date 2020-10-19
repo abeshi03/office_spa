@@ -1,5 +1,5 @@
 <div class="menu-left">
-  <p>全員</p>
+  <p>社員</p>
 </div>
 <div class="category">
   <%= menu.category %>
@@ -9,5 +9,10 @@
 </div>
 <div class="menu_image">
   <%= image_tag menu.display_image if menu.image.attached? %>
+  <span><%= menu.description %></span>
+</div>
+<div class="conditions">
+  <p>利用条件: 社員</p>
+  <p>注意事項: 髪の毛をスタイリングされている方は少し崩れる可能性があります</p>
 </div>
 <div class="cf"></div>
