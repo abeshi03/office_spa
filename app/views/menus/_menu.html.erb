@@ -1,0 +1,26 @@
+<div class="menu_list">
+  <div class="row">
+    <div class="col-md-6">
+      <%= image_tag menu.display_image if menu.image.attached? %>
+    </div>
+    <div class="col-md-6">
+      <div class="menu_name">
+        <h3><%= menu.name %></h3>
+        <span class="menu_category"><%= menu.category %></span>
+      </div>
+      <div class="menu_description">
+        <span>〜こんな方におすすめ〜</span>
+        <p class="lead"><%= menu.description %></p>
+      </div>
+      <div class="menu_btn_link">
+        <%= link_to "予約する", "#", class: "btn btn-lg btn-primary menu_btn"%>
+        <% if current_user.admin? %>
+          <P>
+            <%= link_to "メニューを削除する", menu_path(menu.id), method: :delete, class: "menu_delete", data: { confirm: "本当に削除しますか?" } %>
+          </p>
+        <% end %>
+      </div>
+      <div class="cf"></div>
+    </div>
+  </div>
+</div>

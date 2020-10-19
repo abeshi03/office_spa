@@ -199,8 +199,8 @@ a.gest{
   }
   .top_image {
     width: 100%;
-    height: 700px;
-    margin-top: -80px;
+    height: 950px;
+    margin-top: -250px;
     background-image: url("office.jpg");
     background-size: cover;
     background-color:rgba(124, 49, 49, 0.6);
@@ -209,7 +209,7 @@ a.gest{
       color: white;
       opacity: 0.8;
       font-weight: bold;
-      padding-top: 500px;
+      padding-top: 700px;
       padding-left: 50px;
       h1 {
         font-size: 60px;
@@ -539,4 +539,92 @@ textarea.comment_form {
       font-size: 20px;
     }
   }
+}
+
+/* menu new */
+#menu_area {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 10px;
+  height: 80px;
+}
+a.menus_index_btn {
+  margin-top: 5px;
+  display: inline-block;
+}
+input#menu_image {
+  text-align: center;
+  display: inline-block;
+}
+@media (max-width: 1000px) {
+  #menu_area {
+    width: 100%;
+  }
+}
+
+/* menu index */
+.menu_index {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  img {
+    width: 100%;
+  }
+  h2 {
+    padding-top: 20px;
+  }
+  .menu_list {
+    border: 1px solid #CCCCCC;
+    margin-top: 10px;
+  }
+  h3 {
+    font-weight: bold;
+  }
+  span.menu_category {
+    background-color: #6DCE96;
+    color: white;
+    padding: 3px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+  .menu_btn_link {
+    text-align: right;
+    margin-right: 20px;
+  }
+  .menu_description {
+    span {
+      font-size: 15px;
+    }
+  }
+  p a.menu_delete {
+    margin-top: 5px;
+    display: inline-block;
+  }
+}
+@media (max-width: 1200px) {
+  .menu_index {
+    img {
+      width: 100%;
+    }
+  }
+  .menu_name {
+    margin-left: 50px;
+  }
+  .menu_description {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 1000px) {
+  .menu_index {
+    img {
+      width: 100%;
+    }
+  }
+  .menu_name {
+    margin-left: 5px;
+  }
+  .menu_description {
+    margin-left: 5px;
+  }
+  
 }

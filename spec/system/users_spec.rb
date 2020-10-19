@@ -80,7 +80,7 @@ RSpec.describe "Users", type: :system do
     it "redirect to root_path for non-administrators" do
       log_in_as user
       visit users_path
-      expect(current_path).to eq root_path
+      expect(current_path).to eq top_path
     end
   end
 
