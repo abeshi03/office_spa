@@ -16,7 +16,7 @@
         <%= link_to "予約する", "#", class: "btn btn-lg btn-primary menu_btn"%>
         <% if current_user.admin? %>
           <P>
-            <%= link_to "メニューを削除する", "#", method: :delete, class: "menu_delete" %>
+            <%= link_to "メニューを削除する", menu_path(menu.id), method: :delete, class: "menu_delete", data: { confirm: "本当に削除しますか?" } %>
           </p>
         <% end %>
       </div>

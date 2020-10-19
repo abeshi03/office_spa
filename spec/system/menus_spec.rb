@@ -23,6 +23,11 @@ RSpec.describe "Menus", type: :system do
         click_on "メニューを追加する"
         expect(current_path).to eq new_menu_path
       end
+
+      it "menu destroy" do
+        click_on "メニューを削除する"
+        expect(page).to have_content "メニューを削除しました"
+      end
     end
   end
 end
