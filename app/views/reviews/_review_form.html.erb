@@ -1,0 +1,19 @@
+<div class="rating-box mt-3">
+  <%= form_with model: review, url: "#", local: true do |f| %>
+    <div class="main-rating">
+      <div class="ratings mb-3">
+        <%= icon("far", "star", class: "reviews_star", id: "star") %>
+        <%= icon("far", "star", class: "reviews_star", id: "star") %>
+        <%= icon("far", "star", class: "reviews_star", id: "star") %>
+        <%= icon("far", "star", class: "reviews_star", id: "star") %>
+        <%= icon("far", "star", class: "reviews_star", id: "star") %>
+      </div>
+      <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
+    </div>
+    <%= f.hidden_field :menu_id, value: menu.id %>
+    <%= f.hidden_field :score, id: "rating-value" %>
+    <%= f.text_field :content, class: "textarea" %>
+    <%= f.submit "保存", class: "btn btn-primary" %>
+    <%= link_to "他のレビューを見る", "#" %>
+  <% end %>
+</div>
