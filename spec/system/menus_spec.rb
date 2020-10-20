@@ -11,6 +11,11 @@ RSpec.describe "Menus", type: :system do
         log_in_as user
         visit menus_path
       end
+
+      it "menu_path link test" do
+        click_on "口コミはこちら"
+        expect(current_path).to eq menu_path(menu.id)
+      end
     end
 
     context "admin" do

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete '/logout',   to: 'sessions#destroy'
   post '/gest_login', to: 'gest_login#new_gest'
   resources :users
-  resources :menus,       only: [:index, :new, :create, :destroy] do
+  resources :menus,       only: [:index, :new, :show, :create, :destroy] do
     resources :reviews, only: [:index, :create]
   end
   resources :requests,    only: [:index, :show, :new, :create, :destroy] do
