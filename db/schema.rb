@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_18_155537) do
+ActiveRecord::Schema.define(version: 2020_10_20_161857) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -70,6 +70,17 @@ ActiveRecord::Schema.define(version: 2020_10_18_155537) do
     t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "menu_id", null: false
+    t.string "content"
+    t.integer "score"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["menu_id"], name: "index_reviews_on_menu_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -86,4 +97,6 @@ ActiveRecord::Schema.define(version: 2020_10_18_155537) do
   add_foreign_key "comments", "requests"
   add_foreign_key "comments", "users"
   add_foreign_key "requests", "users"
+  add_foreign_key "reviews", "menus"
+  add_foreign_key "reviews", "users"
 end
