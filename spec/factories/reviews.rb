@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :review do
-    user { nil }
-    manu { nil }
+    user
+    menu
     content { "MyString" }
     score { 1 }
   end
