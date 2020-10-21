@@ -8,14 +8,16 @@
         <span class="fa fa-star-o" id="star"></span>
         <span class="fa fa-star-o" id="star"></span>
       </div>
-      <div class="ml-3 rating-value-display"><span id="rating-value-display">0</span>/5</div>
+      <div class="rating-value-display"><span id="rating-value-display">0</span>/5</div>
     </div>
     <%= render "shared/error_messages", object: f.object %>
     <%= f.hidden_field :menu_id, value: menu.id %>
     <%= f.hidden_field :score, id: "rating-value" %>
-    <%= f.text_field :content, class: "textarea" %>
-    <%= f.submit "保存", class: "btn btn-primary" %>
-    <%= link_to "他のレビューを見る", "#" %>
+    <%= f.text_area :content, class: "textarea review_content" %>
+    <%= f.submit "口コミを投稿する", class: "btn btn-primary" %>
+    <P>
+      <%= link_to "口コミを確認する", menu_reviews_path(menu), class: "other_btn" %>
+    </P>
   <% end %>
 </div>
 <%= javascript_pack_tag 'reviews.js' %>

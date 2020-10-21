@@ -644,26 +644,50 @@ p.review_link {
 .rating-value-display {
   font-size: 20px;
 }
-.star-rating {
-  position: relative;
-  width: 5em;
-  height: 1em;
-  font-size: 25px;
-}
-.star-rating-front {
-  position: absolute;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  color: #ffcc33;
-}
-.star-rating-back {
-  color: #ccc;
-}
 
 .average-score {
   display: flex;
 }
 .average-score-display {
   font-size: 16px;
+}
+/* reviews_show */
+.menu_show {
+  background-image: url("top_image.jpg");
+  background-size: cover;
+  color: white;
+  width: 100%;
+  margin-top: -70px;
+  height: 800px;
+  text-align: center;
+  h1 {
+    font-weight: bold;
+    padding-top: 100px;
+  }
+  .main-rating {
+    display: block;
+  }
+  .review_content {
+    height: 200px;
+    width: 50%;
+    margin: 10px 0;
+  }
+  p {
+    margin-top: 5px;
+    display: block;
+    font-size: 20px;
+  }
+  .backcolor {
+    background-color: rgba(0,0,0,0.3);
+    height: 800px;
+  }
+  a.other_btn {
+    color: white;
+    text-decoration: none;
+  }
+  @media (max-width: 1000px) {
+    .review_content {
+      width: 100%;
+    }
+  }
 }

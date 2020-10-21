@@ -13,7 +13,7 @@ RSpec.describe "Menus", type: :system do
       end
 
       it "menu_path link test" do
-        click_on "口コミはこちら"
+        click_on "口コミを書く"
         expect(current_path).to eq menu_path(menu.id)
       end
     end
