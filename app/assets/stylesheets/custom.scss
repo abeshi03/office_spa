@@ -780,3 +780,32 @@ p.review_link {
 a.review_delet_btn {
   font-size: 15px;
 }
+
+/* new_review_static_pages */
+.new_review_page {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-image: url("sky.jpg");
+  color: white;
+  background-size: cover;
+  margin-top: -90px;
+  padding-bottom: 100px;
+  h2 {
+    padding-top: 110px;
+  }
+  .backcolor {
+    background-color: rgba(0,0,0,0.3);
+    height: auto;
+  }
+  .review_page_box {
+    margin-top: 10px;
+    width: 700px;
+    display: inline-block;
+  }
+  .review_light span a {
+    font-size: 20px;
+    display: inline-block;
+    width: 250px;
+  }
+}
