@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @review.user_id = current_user.id
     if @review.save
       redirect_to menu_reviews_path(@review.menu)
+      flash[:success] = "口コミを投稿しました"
     else
       @menu = Menu.find(params[:menu_id])
       render "menus/show"
