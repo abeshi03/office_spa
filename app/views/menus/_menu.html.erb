@@ -14,7 +14,7 @@
       </div>
       <div class="menu_btn_link">
         <%= link_to "予約する", "#", class: "btn btn-lg btn-primary menu_btn"%>
-        <p>
+        <p class="review_link">
           <%= link_to "口コミはこちら", menu_path(menu.id) %>
         </p>
         <% if current_user.admin? %>

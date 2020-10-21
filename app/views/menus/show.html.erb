@@ -4,6 +4,17 @@
     <h1>口コミ</h1>
     <p><%= @menu.name %></p>
     <p><%= @menu.description %></p>
+    <div class="card-content">
+      <div class="content average-score">
+        <div class="star-rating mb-2">
+          <div class="star-rating-front">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+        </div>
+        <div class="average-score-display">
+          件のレビュー）
+        </div>
+      </div>
+    </div>
     <%= render "reviews/review_form", review: @review, menu: @menu %>
   </div>
 </div>

@@ -19,3 +19,8 @@ ja:
         category: カテゴリー
         user_id: ユーザー
         manu_id: メニュー
+      review:
+        score: 星評価
+        content: 口コミ
+        menu_id: メニュー
+        user_id: ユーザー
