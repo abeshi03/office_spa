@@ -7,7 +7,7 @@
         <div class="review_page_box">
           <h3><%= menu.name %></h3>
           <p>
-            <%= image_tag menu.display_image %>
+            <%= image_tag menu.display_image if menu.image.attached? %>
           </p>
           <div class="review_light">
             <span><%= link_to "口コミを書く", menu_path(menu.id), class: "btn btn-primary" %></span>
