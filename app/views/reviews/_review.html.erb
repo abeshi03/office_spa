@@ -11,5 +11,9 @@
     <p class="review_description">
       <%= review.content %>
     </p>
+    <% if current_user == review.user %>
+      <%= link_to "口コミを削除する", menu_review_path(review, review.id),
+          method: :delete, class: "review_delet_btn", method: :delete, data: {confirm: "本当に削除しますか？"} %>
+    <% end %>
   </div>
 </div>

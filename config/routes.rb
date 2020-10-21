@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post '/gest_login', to: 'gest_login#new_gest'
   resources :users
   resources :menus,       only: [:index, :new, :show, :create, :destroy] do
-    resources :reviews, only: [:index, :create]
+    resources :reviews, only: [:index, :create, :destroy]
   end
   resources :requests,    only: [:index, :show, :new, :create, :destroy] do
     resources :comments,  only: [:create, :destroy]
