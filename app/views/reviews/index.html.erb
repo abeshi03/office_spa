@@ -3,9 +3,11 @@
   <div class="container">
     <div class="menu_description_box">
       <h2 class="menu_title"><%= @menu.name %></h2>
-      <div class="star-ration">
-        <div class="star-rating-front" style="width: <%= @menu.review_score_percentage %>%">★★★★★</div>
-        <div class="star-rating-back">★★★★★</div>
+       <div class="content average-score">
+        <div class="star-rating">
+          <div class="star-rating-front" style="width: <%= @menu.review_score_percentage %>%">★★★★★</div>
+          <div class="star-rating-back">★★★★★</div>
+        </div>
       </div>
       <div class="average-score-display">
         平均<%= @menu.avg_score %>点（<%= @menu.reviews.count %>件のレビュー）

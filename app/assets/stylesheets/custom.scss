@@ -695,6 +695,7 @@ p.review_link {
 /* review_index */
 .menu_review_index {
   width: 100%;
+  margin-top: 50px;
   text-align: center;
   height: auto;
   .menu_description_box {
@@ -717,8 +718,9 @@ p.review_link {
 
 .star-rating-front {
   position: absolute;
-  top: 20;
+  top: 0;
   left: 0;
+  text-align: center;
   overflow: hidden;
   color: #ffcc33;
   font-size: 30px;
@@ -732,13 +734,14 @@ p.review_link {
 }
 .star-rating {
   position: relative;
-  width: 5em;
-  height: 1em;
   font-size: 25px;
+  margin-left: 270px;
 }
 .review_user_box {
-  width: 100%;
+  width: 700px;
   height: auto;
+  text-align: center;
+  display: inline-block;
   border: 1px solid #cccccc;
   margin-top: 20px;
   .user_name_box {
