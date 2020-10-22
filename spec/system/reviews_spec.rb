@@ -59,6 +59,11 @@ RSpec.describe "Reviews", type: :system do
         click_on "口コミを削除する"
         expect(page).to have_content "口コミを削除しました"
       end
+
+      it "review_post link test" do
+        click_on "口コミを投稿する"
+        expect(current_path).to eq menu_path(menu.id)
+      end
     end
 
     context "admin" do

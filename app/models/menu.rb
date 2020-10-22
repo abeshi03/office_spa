@@ -13,18 +13,18 @@ class Menu < ApplicationRecord
   end
 
   def avg_score
-    unless reviews.empty?
-      reviews.average(:score).round(1).to_f
-    else
+    if reviews.empty?
       0.0
+    else
+      reviews.average(:score).round(1).to_f
     end
   end
 
   def review_score_percentage
-    unless reviews.empty?
-      reviews.average(:score).round(1).to_f * 100/5
-    else
+    if reviews.empty?
       0.0
+    else
+      reviews.average(:score).round(1).to_f * 100 / 5
     end
   end
 end

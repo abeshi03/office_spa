@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Menus", type: :system do
   describe "menus/index" do
-    let!(:user)  { create :user } 
-    let!(:admin) { create :admin}
+    let!(:user)  { create :user }
+    let!(:admin) { create :admin }
     let!(:menu)  { create :menu }
 
     context "user" do

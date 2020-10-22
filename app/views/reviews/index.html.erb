@@ -12,6 +12,7 @@
       <div class="average-score-display">
         平均<%= @menu.avg_score %>点（<%= @menu.reviews.count %>件の口コミ）
       </div>
+      <%= link_to "口コミを投稿する", menu_path(@menu.id) %>
     </div>
     <%= render @reviews %>
   </div>
