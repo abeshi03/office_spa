@@ -614,6 +614,9 @@ input#menu_image {
     margin-left: 50px;
   }
 }
+p.review_link {
+  margin-top: 5px;
+}
 @media (max-width: 1000px) {
   .menu_index {
     img {
@@ -626,5 +629,183 @@ input#menu_image {
   .menu_description {
     margin-left: 5px;
   }
-  
+}
+/* review */
+.rating-box .ratings .fa{
+  font-size: 30px;
+  color:#ffcc00;
+  cursor: pointer;
+}
+
+.main-rating {
+  display: flex;
+}
+
+.rating-value-display {
+  font-size: 20px;
+}
+
+.average-score {
+  display: flex;
+}
+.average-score-display {
+  font-size: 16px;
+}
+/* reviews_show */
+.menu_show {
+  background-image: url("top_image.jpg");
+  background-size: cover;
+  color: white;
+  width: 100%;
+  margin-top: -70px;
+  height: 800px;
+  text-align: center;
+  h1 {
+    font-weight: bold;
+    padding-top: 100px;
+  }
+  .main-rating {
+    display: block;
+  }
+  .review_content {
+    height: 200px;
+    width: 50%;
+    margin: 10px 0;
+    color: black;
+  }
+  p {
+    margin-top: 5px;
+    display: block;
+    font-size: 20px;
+  }
+  .backcolor {
+    background-color: rgba(0,0,0,0.3);
+    height: 800px;
+  }
+  a.other_btn {
+    color: white;
+    text-decoration: none;
+  }
+  @media (max-width: 1000px) {
+    .review_content {
+      width: 100%;
+    }
+  }
+}
+/* review_index */
+.menu_review_index {
+  width: 100%;
+  margin-top: 50px;
+  text-align: center;
+  height: auto;
+  .menu_description_box {
+    width: 700px;
+    height: auto;
+    border: 1px solid #CCCCCC;
+    display: inline-block;
+    text-align: center;
+    h2 {
+      margin-top: 25px;
+      font-weight: bold;
+      border-bottom: 1px solid #cccccc;
+      padding-bottom: 25px;
+    }
+  }
+  .average-score-display {
+    padding-bottom: 20px;
+  }
+}
+
+.star-rating-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  overflow: hidden;
+  color: #ffcc33;
+  font-size: 30px;
+}
+.star-rating-back {
+  color: #ccc;
+  font-size: 30px;
+}
+.star_box {
+  display: flex;
+}
+.star-rating {
+  position: relative;
+  font-size: 25px;
+  margin-left: 270px;
+}
+.review_user_box {
+  width: 700px;
+  height: auto;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #cccccc;
+  margin-top: 20px;
+  .user_name_box {
+    background-color: #FFEFC7;
+    border-bottom: 3px solid #9C68CD;
+    padding-bottom: 5px;
+  }
+  .user_score {
+    background-color: #FFEFC7;
+    p {
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 8px;
+      display: inline-block;
+    }
+    span {
+      color: gray;
+      display: inline-block;
+    }
+  }
+  .review_description_box {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 20px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+  }
+  span.review_user_name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+}
+a.review_delet_btn {
+  font-size: 15px;
+}
+
+/* new_review_static_pages */
+.new_review_page {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-image: url("sky.jpg");
+  color: white;
+  background-size: cover;
+  margin-top: -90px;
+  padding-bottom: 100px;
+  h2 {
+    padding-top: 110px;
+  }
+  .backcolor {
+    background-color: rgba(0,0,0,0.3);
+    height: auto;
+  }
+  .review_page_box {
+    margin-top: 10px;
+    width: 700px;
+    display: inline-block;
+  }
+  .review_light span a {
+    font-size: 20px;
+    display: inline-block;
+    width: 250px;
+  }
 }

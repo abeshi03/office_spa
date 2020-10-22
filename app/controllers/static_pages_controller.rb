@@ -8,4 +8,8 @@ class StaticPagesController < ApplicationController
 
   def staff
   end
+
+  def new_review
+    @menus = Menu.all
+  end
 end

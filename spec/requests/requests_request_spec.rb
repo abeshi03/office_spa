@@ -39,4 +39,25 @@ RSpec.describe "Requests", type: :request do
       expect(response.body).to include request.content
     end
   end
+
+  describe "Get/index" do
+    let!(:user)   { create :user }
+    let!(:menu)   { create :menu }
+    let!(:review) { create :review }
+
+    before do
+      sign_in_as user
+      get menu_reviews_path(menu.id)
+    end
+
+    it "review index response success" do
+      expect(response).to have_http_status(:success)
+    end
+
+    it "review index response content" do
+      expect(response.body).to include menu.name
+      expect(response.body).to include review.score.to_s
+      expect(response.body).to include review.content
+    end
+  end
 end

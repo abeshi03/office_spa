@@ -14,5 +14,6 @@ AllCops:
     - 'vendor/**/*'
     - 'path/ruby'
     - 'spec/spec_helper.rb'
+    - 'spec/factories/**.rb'
     - 'spec/rails_helper.rb'
     - 'node_modules/**/*'

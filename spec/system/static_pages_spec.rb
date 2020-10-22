@@ -24,6 +24,7 @@ RSpec.describe "StaticPages", type: :system do
 
   describe "SatticPages/top" do
     let!(:user) { create :user }
+    let!(:menu) { create :menu }
 
     context "for user" do
       before do
@@ -48,6 +49,20 @@ RSpec.describe "StaticPages", type: :system do
       it "staff page link test" do
         click_on "スタッフ"
         expect(current_path).to eq staff_path
+      end
+
+      it "review page link test" do
+        click_on "口コミ"
+        expect(current_path).to eq new_review_path
+      end
+
+      it "new_review_path link test" do
+        click_on "口コミ"
+        click_on "口コミを書く"
+        expect(current_path).to eq "/menus/#{menu.id}"
+        visit new_review_path
+        click_on "口コミを見る"
+        expect(current_path).to eq "/menus/#{menu.id}/reviews"
       end
     end
   end

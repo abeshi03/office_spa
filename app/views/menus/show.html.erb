@@ -1,0 +1,10 @@
+<%= provide(:title, "メニュー詳細") %>
+<div class="menu_show">
+  <div class="backcolor">
+    <div class="container">
+      <h1>口コミ</h1>
+      <p><%= @menu.name %></p>
+      <%= render "reviews/review_form", review: @review, menu: @menu %>
+    </div>
+  </div>
+</div>

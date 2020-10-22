@@ -10,6 +10,11 @@ class MenusController < ApplicationController
     @menu = Menu.new
   end
 
+  def show
+    @menu = Menu.find(params[:id])
+    @review = Review.new
+  end
+
   def create
     @menu = current_user.menus.build(menu_params)
     @menu.image.attach(params[:menu][:image])
