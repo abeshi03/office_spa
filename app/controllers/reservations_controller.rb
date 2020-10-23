@@ -16,17 +16,19 @@ class ReservationsController < ApplicationController
   # GET /reservations/new
   def new
     @reservation = Reservation.new
+    @reservations = Reservation.all
   end
 
   # POST /reservations
   # POST /reservations.json
   def create
+    @reservations = Reservation.all
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
       flash[:success] = "予約を完了しました"
       redirect_to reservations_path
     else
-      render "new"
+      render "reservations/new"
     end
   end
 

@@ -22,16 +22,7 @@
     <% end %>
   </tbody>
 </table>
-
-<%= month_calendar events: @reservations do |date, reservations| %>
-  <%= date %>
-
-  <% reservations.each do |reservation| %>
-    <div>
-      <%= link_to reservation.name, reservation_path(reservation.id) %>
-    </div>
-  <% end %>
-<% end %>
+<%= render "calendar_form", reservations: @reservations %>
 
 <br>
 

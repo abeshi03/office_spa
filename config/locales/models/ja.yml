@@ -24,3 +24,6 @@ ja:
         content: 口コミ
         menu_id: メニュー
         user_id: ユーザー
+      reservation:
+        name: フルネーム
+        start_time: 日時

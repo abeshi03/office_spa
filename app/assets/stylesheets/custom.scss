@@ -810,3 +810,30 @@ a.review_delet_btn {
     width: 250px;
   }
 }
+
+/* reservation_new */
+.reservation_new {
+  text-align: center;
+  .caution {
+    font-weight: bold;
+    color: red;
+  }
+  .reservation_btn {
+    margin-top: 10px;
+  }
+  #reservation_start_time_1i {
+    font-size: 20px;
+  }
+  #reservation_start_time_2i {
+    font-size: 20px;
+  }
+  #reservation_start_time_3i {
+    font-size: 20px;
+  }
+  #reservation_start_time_4i {
+    font-size: 20px;
+  }
+  #reservation_start_time_5i {
+    font-size: 20px;
+  }
+ }
