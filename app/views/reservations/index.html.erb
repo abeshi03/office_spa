@@ -22,7 +22,6 @@
               <tr>
                 <td><%= reservation.name %></td>
                 <td><%= reservation.start_time %></td>
-                <td><%= link_to '詳細', reservation, class: "reservation_show_btn" %></td>
                 <td><%= link_to '削除', reservation, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
               </tr>
             <% end %>

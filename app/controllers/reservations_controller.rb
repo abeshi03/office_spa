@@ -3,13 +3,9 @@ class ReservationsController < ApplicationController
   before_action :logged_in_user
 
   def index
-    #@reservations = Reservation.all.order(start_time: :desc)
     @reservations = Reservation.paginate(page: params[:page]).order(start_time: :desc)
   end
-
-  def show
-  end
-
+  
   def new
     @reservation = Reservation.new
     @reservations = Reservation.all

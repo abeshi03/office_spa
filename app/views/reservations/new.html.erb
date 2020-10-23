@@ -6,8 +6,9 @@
       <p class="lead">・予約時間は原則業務時間外の13:15もしくは19:15としております</p>
       <p class="lead">・ご予約は1日2名までとなっております</p>
       <p class="lead">・土日祝日のご予約は受け付けておりません</p>
-      <p class="lead">・コースは当日ご相談ください</p>
+      <p class="lead">・メニューは当日ご相談ください</p>
     </div>
+    <%= link_to "メニューを確認する", menus_path %>
     <%= render 'form', reservation: @reservation %>
   </div>
   <%= render "calendar_form", reservations: @reservations %>
