@@ -821,6 +821,12 @@ a.review_delet_btn {
   .reservation_btn {
     margin-top: 10px;
   }
+  .reservation_form {
+    font-weight: bold;
+  }
+  p.lead {
+    font-weight: bold;
+  }
   #reservation_start_time_1i {
     font-size: 20px;
   }
@@ -836,4 +842,11 @@ a.review_delet_btn {
   #reservation_start_time_5i {
     font-size: 20px;
   }
+ }
+ .reservations_index {
+   h1.reservations {
+     text-align: center;
+     font-weight: bold;
+     margin-top: 20px;
+   }
  }

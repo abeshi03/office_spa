@@ -2,25 +2,18 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user
 
-  # GET /reservations
-  # GET /reservations.json
   def index
-    @reservations = Reservation.all
+    @reservations = Reservation.all.order(start_time: :desc)
   end
 
-  # GET /reservations/1
-  # GET /reservations/1.json
   def show
   end
 
-  # GET /reservations/new
   def new
     @reservation = Reservation.new
     @reservations = Reservation.all
   end
 
-  # POST /reservations
-  # POST /reservations.json
   def create
     @reservations = Reservation.all
     @reservation = Reservation.new(reservation_params)
@@ -32,8 +25,6 @@ class ReservationsController < ApplicationController
     end
   end
 
-  # DELETE /reservations/1
-  # DELETE /reservations/1.json
   def destroy
     @reservation.destroy
     flash[:success] = "予約を削除しました"
@@ -41,13 +32,12 @@ class ReservationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reservation
-      @reservation = Reservation.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def reservation_params
-      params.require(:reservation).permit(:name, :start_time)
-    end
+  def set_reservation
+    @reservation = Reservation.find(params[:id])
+  end
+
+  def reservation_params
+    params.require(:reservation).permit(:name, :start_time)
+  end
 end
