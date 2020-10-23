@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :reservation do
     name { "MyString" }
-    start_time { "2020-10-23 06:04:28" }
+    start_time { "2090-10-23 19:15:00" }
   end
 end
