@@ -855,4 +855,18 @@ a.review_delet_btn {
   text-align: right;
   margin-top: -15px;
  }
+ a.reservations_link {
+   margin-top: 5px;
+   display: block;
+ }
+ .reservation_user {
+   display: block;
+   font-size: 20px;
+   margin-top: -25px;
+   a.reservation_show_btn {
+     display: inline-block;
+     margin-left: 5px;
+     margin-right: 10px;
+   }
+ }
  

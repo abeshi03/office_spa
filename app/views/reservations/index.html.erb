@@ -6,27 +6,30 @@
     <br>
 
     <%= link_to '予約したい方はこちら', new_reservation_path, class: "reservation_link" %>
-    <% if current_user.admin? %>
-      <table>
-        <thead>
-          <tr>
-            <th>予約名</th>
-            <th>開始時間</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @reservations.each do |reservation| %>
+    <div class="reservation_user">
+      <% if current_user.admin? %>
+        <%= will_paginate %>
+        <table>
+          <thead>
             <tr>
-              <td><%= reservation.name %></td>
-              <td><%= reservation.start_time %></td>
-              <td><%= link_to '予約詳細', reservation %></td>
-              <td><%= link_to '削除', reservation, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+              <th>予約名</th>
+              <th>開始時間</th>
+              <th colspan="3"></th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <% end %>
+          </thead>
+          <tbody>
+            <% @reservations.each do |reservation| %>
+              <tr>
+                <td><%= reservation.name %></td>
+                <td><%= reservation.start_time %></td>
+                <td><%= link_to '詳細', reservation, class: "reservation_show_btn" %></td>
+                <td><%= link_to '削除', reservation, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <%= will_paginate %>
+      <% end %>
+    </div>
   </div>
 </div>
