@@ -8,7 +8,6 @@ module LoginSupport
   end
 
   def login_destination
-    log_in_as user
     expect(current_path).to eq top_path
   end
 

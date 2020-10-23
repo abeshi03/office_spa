@@ -1,0 +1,17 @@
+<div class="top_page">
+  <div class="top_image">
+    <div class="top_comment">
+      <h1>生産性をあげよう</h1>
+      <h2>頭痛は脳のSOS</h2>
+    </div>
+  </div>
+  <div id="flex_link">
+    <div class="flex-item"><%= link_to "メニュー", menus_path, class: "btn btn-success" %></div>
+    <div class="flex-item"><%= link_to "スタッフ", staff_path, class: "btn btn-success" %></div>
+    <div class="flex-item"><%= link_to "お知らせ", "#", class: "btn btn-success" %></div>
+    <div class="flex-item"><%= link_to "要望", new_request_path, class: "btn btn-success" %></div>
+    <div class="flex-item"><%= link_to "マイページ", current_user, class: "btn btn-success user_link" %></div>
+    <div class="flex-item"><%= link_to "口コミ", new_review_path, class: "btn btn-success" %></div>
+    <div class="flex-item"><%= link_to "予約する", new_reservation_path, class: "btn btn-success" %></div>
+  </div>
+</div>
