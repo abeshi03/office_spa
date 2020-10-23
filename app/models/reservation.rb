@@ -4,7 +4,7 @@ class Reservation < ApplicationRecord
   validate :start_time_not_sunday
   validate :start_time_not_saturday
   validate :time_only_1
-
+  validates :start_time, uniqueness: { message: 'は他のユーザーが予約しています' }
 
   def date_before_start
     errors.add(:start_time, "は過去の日付を選択できません") if
@@ -25,7 +25,7 @@ class Reservation < ApplicationRecord
     elsif hour_only_2 && min_only
       true
     else
-      errors.add(:start_time, "予約時間は13:15もしくは19:15になります")
+      errors.add(:start_time, "(時間)は13:15もしくは19:15になります")
     end
   end
 

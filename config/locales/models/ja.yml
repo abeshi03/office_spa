@@ -26,4 +26,4 @@ ja:
         user_id: ユーザー
       reservation:
         name: フルネーム
-        start_time: 日時
+        start_time: 予約日時
