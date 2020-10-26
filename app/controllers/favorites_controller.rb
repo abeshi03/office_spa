@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
   def destroy
     user = current_user
     request = Request.find(params[:request_id])
-    if favorite = Favorite.find_by(user_id: user.id, request_id: request.id)
+    if favorite == Favorite.find_by(user_id: user.id, request_id: request.id)
       favorite.delete
       redirect_to request
     else

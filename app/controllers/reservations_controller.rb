@@ -5,7 +5,7 @@ class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.paginate(page: params[:page]).order(start_time: :desc)
   end
-  
+
   def new
     @reservation = Reservation.new
     @reservations = Reservation.all

@@ -32,7 +32,6 @@ RSpec.describe "StaticPages", type: :request do
     it "select button test" do
       expect(response.body).to include "メニュー"
       expect(response.body).to include "スタッフ"
-      expect(response.body).to include "お知らせ"
       expect(response.body).to include "要望"
       expect(response.body).to include "マイページ"
       expect(response.body).to include "口コミ"

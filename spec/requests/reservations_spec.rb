@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Reservations", type: :request do
   describe "GET /new" do
-    let!(:user)  { create :user }
+    let!(:user) { create :user }
 
     before do
       sign_in_as user
@@ -17,7 +17,7 @@ RSpec.describe "Reservations", type: :request do
   describe "GET /index" do
     let!(:reservation) { create :reservation }
     let!(:user)  { create :user }
-    let!(:admin) { create :admin}
+    let!(:admin) { create :admin }
 
     context "user" do
       before do

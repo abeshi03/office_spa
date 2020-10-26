@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Reservations", type: :system do
   describe "reservation/new" do
-    let!(:user)  { create :user }
+    let!(:user) { create :user }
     let!(:reservation) { create :reservation }
 
     before do
