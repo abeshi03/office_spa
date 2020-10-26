@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "simple_calendar";
 
 .cf {
   clear: both;
@@ -27,6 +28,57 @@ ul {
   background-size: cover;
   background-color:rgba(124, 49, 49, 0.6);
   background-blend-mode:lighten;
+}
+@media(max-width: 1000px) {
+  .main {
+    height: 1000px;
+    header {
+      img {
+        width: 350px;
+        height: 100px;
+      }
+      a {
+        font-size: 40px;
+        padding-top: 10px;
+      }
+    }
+    .description {
+      padding-top: 125px;
+      h1 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 25px;
+      }
+    }
+    a.gest_login {
+      font-size: 18px;
+      margin-right: 5px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    a.admin_login {
+      font-size: 18px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .sub_content {
+    h2 {
+      font-size: 50px;
+    }
+    h3 {
+      font-size: 40px;
+    }
+    h4 {
+      font-size: 30px;
+    }
+    p {
+      font-size: 25px;
+    }
+  }
 }
 
 header {
@@ -80,6 +132,18 @@ header {
     color: white;
     font-weight: bold;
   }  
+}
+.admin_login {
+  padding: 8px 13px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  a {
+    font-size: 13px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+  }
 }
 .sub_content {
   width: 100%;
@@ -217,6 +281,15 @@ a.gest{
       h2 {
         font-size: 50px;
       }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .top_page {
+    a.btn-success {
+      font-size: 70px;
+      height: 150px;
+      padding-top: 20px;
     }
   }
 }
@@ -561,6 +634,23 @@ input#menu_image {
     width: 100%;
   }
 }
+@media (max-width: 1000px) {
+  .menu_list {
+    .menu_name {
+      h3 {
+        font-size: 32px;
+      }
+      .menu_category {
+        font-size: 20px;
+      }
+    }
+    .menu_description {
+      p {
+        font-size: 25px;
+      }
+    }
+  }
+}
 
 /* menu index */
 .menu_index {
@@ -809,3 +899,63 @@ a.review_delet_btn {
     width: 250px;
   }
 }
+
+/* reservation_new */
+.reservation_new {
+  text-align: center;
+  .caution {
+    font-weight: bold;
+    color: red;
+  }
+  .reservation_btn {
+    margin-top: 10px;
+  }
+  .reservation_form {
+    font-weight: bold;
+  }
+  p.lead {
+    font-weight: bold;
+  }
+  #reservation_start_time_1i {
+    font-size: 20px;
+  }
+  #reservation_start_time_2i {
+    font-size: 20px;
+  }
+  #reservation_start_time_3i {
+    font-size: 20px;
+  }
+  #reservation_start_time_4i {
+    font-size: 20px;
+  }
+  #reservation_start_time_5i {
+    font-size: 20px;
+  }
+ }
+ .reservations_index {
+   h1.reservations {
+     text-align: center;
+     font-weight: bold;
+     margin-top: 20px;
+   }
+ }
+ a.reservation_link {
+  display: block;
+  text-align: right;
+  margin-top: -15px;
+ }
+ a.reservations_link {
+   margin-top: 5px;
+   display: block;
+ }
+ .reservation_user {
+   display: block;
+   font-size: 20px;
+   margin-top: -25px;
+   a.reservation_show_btn {
+     display: inline-block;
+     margin-left: 5px;
+     margin-right: 10px;
+   }
+ }
+ 

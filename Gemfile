@@ -15,6 +15,7 @@ gem 'pry-rails'
 gem 'font-awesome-sass'
 gem 'will_paginate',           '3.1.8'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem "simple_calendar", "~> 2.0"
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server

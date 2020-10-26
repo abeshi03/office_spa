@@ -1,0 +1,29 @@
+.simple-calendar {
+  .calendar-heading {
+    font-size: 25px;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+  }
+  .day {}
+
+  .wday-0 {background-color: pink;}
+  .wday-1 {height: 120px;}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {background-color: skyblue;}
+
+  .today {background-color: #FEFFC0;}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month {}
+  .current-month {}
+
+  .has-events {color: red;}
+}

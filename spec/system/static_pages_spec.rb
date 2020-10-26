@@ -64,6 +64,11 @@ RSpec.describe "StaticPages", type: :system do
         click_on "口コミを見る"
         expect(current_path).to eq "/menus/#{menu.id}/reviews"
       end
+
+      it "new_reservation_path link test" do
+        click_on "予約する"
+        expect(current_path).to eq "/reservations/new"
+      end
     end
   end
 end

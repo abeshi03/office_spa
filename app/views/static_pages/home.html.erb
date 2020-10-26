@@ -1,16 +1,21 @@
-<div class="main">
-  <%= render "layouts/header" %>
+<% if logged_in? %>
+  <%= render "top" %>
+<% else %>
+  <div class="main">
+    <%= render "layouts/header" %>
+    <div class="cf"></div>
+    <div class="description">
+      <h1>仕事の合間にヘッドスパ</h1>
+      <p>
+      ベンチャースタートアップ企業向け<br>福利厚生サービス、オフィスでスパ！
+      </p>
+    </div>
+    <div class="cf">
+    <div class="gest">
+      <%= link_to "ゲストログイン(ユーザー)", gest_login_path, method: :post, class: "btn btn-primary gest_login" %>
+      <%= link_to "ゲストログイン(管理者用)", admin_login_path, method: :post, class: "btn btn-primary admin_login" %>
+    </div>
+  </div>
   <div class="cf"></div>
-  <div class="description">
-    <h1>仕事の合間にヘッドスパ</h1>
-    <p>
-    スタートアップベンチャー企業向け<br>福利厚生サービス、オフィスでスパ！
-    </p>
-  </div>
-  <div class="cf">
-  <div class="gest">
-    <%= link_to "ゲストログイン", gest_login_path, method: :post, class: "btn btn-primary gest_login" %>
-  </div>
-</div>
-<div class="cf"></div>
-<%= render 'static_pages/sub_content' %>
+  <%= render 'static_pages/sub_content' %>
+<% end %>

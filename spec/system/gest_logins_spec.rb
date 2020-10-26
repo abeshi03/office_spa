@@ -5,7 +5,13 @@ RSpec.describe "GestLogins", type: :system do
 
   it "root_path gest_login success" do
     visit root_path
-    click_on "ゲストログイン"
+    click_on "ゲストログイン(ユーザー)"
+    login_destination
+  end
+
+  it "admin login test" do
+    visit root_path
+    click_on "ゲストログイン(管理者用)"
     login_destination
   end
 

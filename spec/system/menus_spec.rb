@@ -16,6 +16,11 @@ RSpec.describe "Menus", type: :system do
         click_on "口コミを書く"
         expect(current_path).to eq menu_path(menu.id)
       end
+
+      it "reservation link test" do
+        click_on "予約する"
+        expect(current_path).to eq new_reservation_path
+      end
     end
 
     context "admin" do

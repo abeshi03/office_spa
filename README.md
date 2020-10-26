@@ -1,24 +1,59 @@
-# README
+# サービス概要
+エンジニアチーム向けのオフィスでヘッドスパの予約が取れる予約管理サービスです。
+トップページのゲスト用ログインをご利用下さい。
+<img width="1440" alt="スクリーンショット 2020-10-26 20 08 33" src="https://user-images.githubusercontent.com/67625513/97171652-261d7300-17d1-11eb-9529-b6826e7e8186.png">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# URL
 
-Things you may want to cover:
+# 機能一覧
+- コメント機能(Ajax)
+- いいね機能(Ajax)
+- 予約機能(simple calendar)
+- 口コミ機能(星レビュー機能をAjaxを用いて実装)
+- メニュー投稿機能(画像投稿 Active Storage)
+- 要望投稿機能
+- ログイン機能
+- ゲストログイン機能
+- ページネーション機能
+- セッション維持機能
+- ユーザー機能
 
-* Ruby version
+# 環境使用技術
 
-* System dependencies
+## 開発環境
+- Docker/Docker-compose
+- MySQL2
 
-* Configuration
+## フロントエンド
+- HTML/CSS
+- SCSS
+- Bootstrap
+- JavaScript
 
-* Database creation
+## バックエンド
+- ruby 2.7.0
 
-* Database initialization
+## フレームワーク
+- Ruby on Rails 6.0.3.3
 
-* How to run the test suite
+## テストフレームワーク
+- Rspec(テスト数約150)
 
-* Services (job queues, cache servers, search engines, etc.)
+## 本番環境
 
-* Deployment instructions
+## その他使用技術
+- Rubocop
+- githubのissuse,プルリクを活用した擬似チーム開発
+- simple calendarを使ってカレンダー表示
 
-* ...
+# 制作背景
+現職でセラピストをしており、IT企業を中心にオフィスに出張ヘッドスパに行っていました。
+特にエンジニアの方を担当することが多く、眼精疲労、肩こり、腰痛などを訴えており、
+ひどい場合はそれが原因で退職する方も中にはいるとお話を伺っていました。
+主に大企業を中心に行っていたのですが、どうしてもスタートアップ企業などは資金面などもあり
+リラクゼーション系の福利厚生が導入しにくいと思い、ならば自分がIT×セラピストで業界に
+新たな風を吹かせたいと思いこのサービスを作成致しました。
+
+# ターゲット層
+- エンジニアチーム
+- 少人数のベンチャースタートアップ企業

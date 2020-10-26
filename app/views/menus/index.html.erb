@@ -1,7 +1,7 @@
 <%= provide(:title, "メニュー一覧") %>
 <div class="menu_index">
   <div class="container">
-    <h2>メニュー一覧</h2>
+    <h1>メニュー一覧</h1>
     <% if current_user.admin? %>
       <%= link_to "メニューを追加する", new_menu_path %>
     <% end %>

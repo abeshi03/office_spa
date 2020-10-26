@@ -1,0 +1,18 @@
+<%= form_with(model: reservation, local: true) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <div class="field">
+    <%= f.label :name, "フルネーム(必ずご自身のお名前)" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :start_time, "日時(開始時間は原則13:15 or 19:15になります)" %>
+    <%= f.datetime_select :start_time %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary reservation_btn" %>
+  </div>
+  <%= link_to "予約表を確認する", reservations_path, class: "reservations_link" %>
+<% end %>
