@@ -422,6 +422,23 @@ footer {
       width: 100%;
     }
   }
+  @media (max-width: 900px) {
+    .request_top {
+      h1 {
+        font-size: 50px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    input.request_btn {
+      height: 60px;
+      font-size: 30px;
+    }
+    a.requests_index_btn {
+      font-size: 25px;
+    }
+  }
 }
 a.requests_index_btn {
   margin-top: 10px;
