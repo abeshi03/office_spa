@@ -29,6 +29,18 @@ ul {
   background-color:rgba(124, 49, 49, 0.6);
   background-blend-mode:lighten;
 }
+footer.home {
+  background-color: #e5ebe0;
+  height: 100px;
+  width: 100%;
+  p {
+    display: block;
+    line-height: 100px;
+    text-align: center;
+    color: black;
+    opacity: 0.6;
+  }
+}
 @media(max-width: 1000px) {
   .main {
     height: 1000px;
@@ -410,6 +422,23 @@ footer {
       width: 100%;
     }
   }
+  @media (max-width: 980px) {
+    .request_top {
+      h1 {
+        font-size: 50px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+    input.request_btn {
+      height: 60px;
+      font-size: 30px;
+    }
+    a.requests_index_btn {
+      font-size: 25px;
+    }
+  }
 }
 a.requests_index_btn {
   margin-top: 10px;
@@ -726,6 +755,19 @@ p.review_link {
   color:#ffcc00;
   cursor: pointer;
 }
+@media (max-width: 980px) {
+  .menu_show {
+    h1 {
+      font-size: 50px;
+    }
+  }
+  .rating-box {
+    input {
+      font-size: 30px;
+      height: 60px;
+    }
+  }
+}
 
 .main-rating {
   display: flex;
@@ -956,6 +998,50 @@ a.review_delet_btn {
      display: inline-block;
      margin-left: 5px;
      margin-right: 10px;
+   }
+ }
+ @media (max-width: 980px) {
+   .reservation_new {
+     h1.reservation_form {
+       font-size: 50px;
+     }
+     h2 {
+       font-size: 40px;
+     }
+     p.lead {
+       font-size: 25px;
+     }
+     a.menu_verification {
+       font-size: 20px;
+     }
+     label {
+       font-size: 20px;
+     }
+     input#reservation_name {
+       height: 60px;
+     }
+     #reservation_start_time_1i {
+      font-size: 35px;
+    }
+    #reservation_start_time_2i {
+      font-size: 35px;
+    }
+    #reservation_start_time_3i {
+      font-size: 35px;
+    }
+    #reservation_start_time_4i {
+      font-size: 35px;
+    }
+    #reservation_start_time_5i {
+      font-size: 35px;
+    }
+    input.reservation_btn {
+      font-size: 30px;
+      height: 60px;
+    }
+    a.reservations_link {
+      font-size: 20px;
+    }
    }
  }
  

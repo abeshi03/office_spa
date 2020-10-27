@@ -6,25 +6,25 @@
     <li class="flex_item">
       <%= link_to top_path do %>
         <%= icon("fas", "home", class: "home-icon") %>
-        ホーム
+        <h4>ホーム</h4>
       <% end %>
     </li>
     <li class="flex_item">
       <%= link_to new_reservation_path do %>
         <%= icon("fas", "clock", class: "clock-icon") %>
-        予約
+        <h4>予約</h4>
       <% end %>
     </li>
     <li class="flex_item">
       <%= link_to current_user do %>
         <%= icon("fas", "user", class: "user-icon") %>
-        マイページ
+        <h4>マイページ</h4>
       <% end %>
     </li>
     <li class="flex_item">
       <%= link_to logout_path, method: :delete, data: {confirm: "ログアウトしますか？"} do %>
         <%= icon("fas", "sign-out-alt", class: "logout-icon") %>
-        ログアウト
+        <h4>ログアウト</h4>
       <% end %>
     </li>
   </ul>
