@@ -5,7 +5,12 @@
     display: block;
     text-align: center;
   }
-  .day {}
+  @media (max-width: 980px) {
+    .calendar-heading {
+      font-size: 40px;
+    }
+  }
+  .day {font-weight: bold;}
 
   .wday-0 {background-color: pink;}
   .wday-1 {height: 120px;}

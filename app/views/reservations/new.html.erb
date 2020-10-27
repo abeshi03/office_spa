@@ -8,7 +8,7 @@
       <p class="lead">・土日祝日のご予約は受け付けておりません</p>
       <p class="lead">・メニューは当日ご相談ください</p>
     </div>
-    <%= link_to "メニューを確認する", menus_path %>
+    <%= link_to "メニューを確認する", menus_path, class: "menu_verification" %>
     <%= render 'form', reservation: @reservation %>
   </div>
   <%= render "calendar_form", reservations: @reservations %>
