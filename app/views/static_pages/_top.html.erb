@@ -6,14 +6,20 @@
     </div>
   </div>
   <div id="flex_link">
-    <div class="flex-item"><%= link_to "予約する", new_reservation_path, class: "btn btn-success" %></div>
-    <div class="flex-item"><%= link_to "メニュー", menus_path, class: "btn btn-success" %></div>
-    <div class="flex-item"><%= link_to "スタッフ", staff_path, class: "btn btn-success" %></div>
-    <div class="flex-item"><%= link_to "口コミ", new_review_path, class: "btn btn-success" %></div>
-    <div class="flex-item"><%= link_to "要望", new_request_path, class: "btn btn-success" %></div>
-    <div class="flex-item"><%= link_to "マイページ", current_user, class: "btn btn-success user_link" %></div>
     <% if current_user.admin? %>
+      <div class="flex-item"><%= link_to "予約確認", reservations_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "メニュー投稿", new_menu_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "スタッフ編集", staff_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "口コミ確認", new_review_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "要望確認", requests_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "ユーザー一覧", users_path, class: "btn btn-success user_link" %></div>
+    <% else %>
+      <div class="flex-item"><%= link_to "マイページ", current_user, class: "btn btn-success user_link" %></div>
+      <div class="flex-item"><%= link_to "予約", new_reservation_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "スタッフ", staff_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "口コミ", new_review_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "要望", new_request_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "マイページ", current_user, class: "btn btn-success user_link" %></div>
     <% end %>
   </div>
 </div>
