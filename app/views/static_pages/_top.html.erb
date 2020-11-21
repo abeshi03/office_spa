@@ -14,8 +14,8 @@
       <div class="flex-item"><%= link_to "要望確認", requests_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "ユーザー一覧", users_path, class: "btn btn-success user_link" %></div>
     <% else %>
-      <div class="flex-item"><%= link_to "マイページ", current_user, class: "btn btn-success user_link" %></div>
-      <div class="flex-item"><%= link_to "予約", new_reservation_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "予約する", new_reservation_path, class: "btn btn-success" %></div>
+      <div class="flex-item"><%= link_to "メニュー", menus_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "スタッフ", staff_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "口コミ", new_review_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "要望", new_request_path, class: "btn btn-success" %></div>
