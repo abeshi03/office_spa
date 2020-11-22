@@ -18,24 +18,44 @@ RSpec.describe "StaticPages", type: :request do
   end
 
   describe "GET /top" do
-    let!(:user) { create :user }
+    context "for user" do
+      let!(:user) { create :user }
 
-    before do
-      sign_in_as user
-      get top_path
+      before do
+        sign_in_as user
+        get top_path
+      end
+
+      it "returns http success is top_page" do
+        expect(response).to have_http_status(:success)
+      end
+
+      it "select button test" do
+        expect(response.body).to include "メニュー"
+        expect(response.body).to include "スタッフ"
+        expect(response.body).to include "要望"
+        expect(response.body).to include "マイページ"
+        expect(response.body).to include "口コミ"
+        expect(response.body).to include "予約する"
+      end
     end
 
-    it "returns http success is top_page" do
-      expect(response).to have_http_status(:success)
-    end
+    context "for admin" do
+      let!(:admin) { create :admin }
 
-    it "select button test" do
-      expect(response.body).to include "メニュー"
-      expect(response.body).to include "スタッフ"
-      expect(response.body).to include "要望"
-      expect(response.body).to include "マイページ"
-      expect(response.body).to include "口コミ"
-      expect(response.body).to include "予約する"
+      before do
+        sign_in_as admin
+        get top_path
+      end
+
+      it "select button test" do
+        expect(response.body).to include "メニュー投稿"
+        expect(response.body).to include "スタッフ編集"
+        expect(response.body).to include "要望確認"
+        expect(response.body).to include "ユーザー一覧"
+        expect(response.body).to include "口コミ確認"
+        expect(response.body).to include "予約確認"
+      end
     end
   end
 end

@@ -19,7 +19,9 @@ RSpec.describe "Reviews", type: :request do
       expect(response.body).to include "口コミ"
       expect(response.body).to include menu.name
       expect(response.body).to include "口コミを確認する"
-      expect(response.body).to include "口コミを投稿する"
+      unless user.admin?
+        expect(response.body).to include "口コミを投稿する"
+      end
     end
   end
 end
