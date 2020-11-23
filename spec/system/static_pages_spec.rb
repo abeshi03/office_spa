@@ -72,6 +72,7 @@ RSpec.describe "StaticPages", type: :system do
     end
 
     context "for admin" do
+      let!(:user)  { create :user }
       let!(:admin) { create :admin }
       let!(:menu)  { create :menu }
 
@@ -90,8 +91,12 @@ RSpec.describe "StaticPages", type: :system do
       end
 
       it "users page link test" do
-        click_on "ユーザー一覧"
+        find(".user_link").click
         expect(current_path).to eq users_path
+        first(".user_name").click
+        expect(current_path).to eq "/users/#{user.id}"
+        click_on "ユーザーを削除"
+        expect(page).to have_content "ユーザーを削除しました"
       end
 
       it "reservations page link test" do

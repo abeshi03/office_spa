@@ -16,9 +16,9 @@
       <% end %>
     </li>
     <li class="flex_item">
-      <%= link_to current_user do %>
+      <%= link_to current_user.admin? ? users_path : current_user do %>
         <%= icon("fas", "user", class: "user-icon") %>
-        <h4>マイページ</h4>
+        <h4 class="user-footer-link"><%= current_user.admin? ? "ユーザー一覧" : "マイページ" %></h4>
       <% end %>
     </li>
     <li class="flex_item">
