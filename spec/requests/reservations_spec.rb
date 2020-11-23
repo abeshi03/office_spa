@@ -41,7 +41,6 @@ RSpec.describe "Reservations", type: :request do
       end
 
       it "reservations response.body test" do
-        expect(response.body).to include
         expect(response.body).to include reservation.name
         expect(response.body).to include reservation.start_time.to_s
       end

@@ -3,8 +3,9 @@ class ReservationsController < ApplicationController
   before_action :logged_in_user
 
   def index
-    @reservations = Reservation.paginate(page: params[:page]).order(start_time: :desc)
-    @reservations_index = Reservation.paginate(page: params[:page]).where("start_time > ?", Date.today).order(start_time: :desc)
+    @reservations = Reservation.paginate(page: params[:page])
+    @reservations_index = Reservation.paginate(page: params[:page]).
+      where("start_time > ?", Date.today).order(start_time: :desc)
   end
 
   def new
