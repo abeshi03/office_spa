@@ -98,6 +98,11 @@ RSpec.describe "StaticPages", type: :system do
         click_on "予約確認"
         expect(current_path).to eq reservations_path
       end
+
+      it "reservations page test for footer" do
+        click_on "予約一覧"
+        expect(current_path).to eq reservations_path
+      end
     end
   end
 end

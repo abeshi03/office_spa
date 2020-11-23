@@ -10,9 +10,9 @@
       <% end %>
     </li>
     <li class="flex_item">
-      <%= link_to new_reservation_path do %>
+      <%= link_to current_user.admin? ? reservations_path : new_reservation_path do %>
         <%= icon("fas", "clock", class: "clock-icon") %>
-        <h4>予約</h4>
+        <h4><%= current_user.admin? ? "予約一覧" : "予約" %></h4>
       <% end %>
     </li>
     <li class="flex_item">
