@@ -41,4 +41,14 @@ RSpec.describe Reservation, type: :model do
     reservation.start_time = "2019-10-23 13:14:00"
     expect(reservation).not_to be_valid
   end
+
+  describe "scope" do
+    let!(:reservations_1) { create :reservation, name: "1", start_time: "2070-10-23 13:15" }
+    let!(:reservations_2) { create :reservation, name: "2", start_time: "2070-10-22 13:15" }
+    let!(:reservations_3) { create :reservation, name: "3", start_time: "2070-10-22 19:15" }
+
+    it "All future reservations are displayed" do
+      expect(Reservation.future_reservations.length).to eq 4
+    end
+  end
 end
