@@ -9,7 +9,6 @@
     <% if current_user.admin? %>
       <div class="flex-item"><%= link_to "予約確認", reservations_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "メニュー投稿", new_menu_path, class: "btn btn-success" %></div>
-      <div class="flex-item"><%= link_to "スタッフ編集", staff_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "口コミ確認", new_review_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "要望確認", requests_path, class: "btn btn-success" %></div>
       <div class="flex-item"><%= link_to "ユーザー一覧", users_path, class: "btn btn-success user_link" %></div>

@@ -19,6 +19,8 @@ RSpec.describe "Reservations", type: :system do
 
       it "time error test" do
         fill_in "フルネーム(必ずご自身のお名前)", with: reservation.name
+        select_date("2030,12,20", from: "日時(開始時間は原則13:15 or 19:15になります)")
+        select_time("13", "00", from: "日時(開始時間は原則13:15 or 19:15になります)")
         click_on "登録する"
         expect(page).to have_content "予約日時(時間)は13:15もしくは19:15になります"
       end
