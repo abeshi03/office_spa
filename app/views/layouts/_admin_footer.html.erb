@@ -1,0 +1,12 @@
+<li class="flex_item">
+  <%= link_to new_reservation_path do %>
+    <%= icon("fas", "clock", class: "clock-icon") %>
+    <h4>予約</h4>
+  <% end %>
+</li>
+<li class="flex_item">
+  <%= link_to current_user do %>
+    <%= icon("fas", "user", class: "user-icon") %>
+    <h4 class="user-footer-link">マイページ</h4>
+  <% end %>
+</li>
