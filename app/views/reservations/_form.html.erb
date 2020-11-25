@@ -8,7 +8,7 @@
 
   <div class="field">
     <%= f.label :start_time, "日時(開始時間は原則13:15 or 19:15になります)" %>
-    <%= f.datetime_select :start_time, {default: Date.today + 19.hour + 15.minute, minute_step: 15} %>
+    <%= f.datetime_select :start_time, { default: Date.today + 19.hour + 15.minute, minute_step: 15 } %>
   </div>
 
   <div class="actions">
