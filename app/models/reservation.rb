@@ -10,6 +10,7 @@ class Reservation < ApplicationRecord
   scope :future_reservations, -> do
     where("start_time > ?", Date.today).order(start_time: :desc)
   end
+  scope :reservations_history, -> (count) { order(start_time: :desc).limit(count) }
 
   def date_before_start
     errors.add(:start_time, "は過去の日付を選択できません") if start_time < Date.today

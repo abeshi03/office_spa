@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @reservations = @user.reservations
+    @reservations = @user.reservations.reservations_history(10)
   end
 
   def create
