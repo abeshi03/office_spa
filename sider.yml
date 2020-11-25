@@ -1,0 +1,6 @@
+linter:
+  rubocop:
+    gems:
+      - rubocop-rspec
+    config: config/.rubocop.yml
+    safe: true
