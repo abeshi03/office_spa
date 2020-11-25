@@ -1,6 +1,8 @@
 <%= form_with(model: reservation, local: true) do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
   <div class="field">
     <%= f.label :name, "フルネーム(必ずご自身のお名前)" %>
     <%= f.text_field :name %>
