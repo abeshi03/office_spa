@@ -12,3 +12,21 @@
   <%= link_to "ユーザーを削除", @user, method: :delete, data: { confirm: "本当に削除しますか?" },
     class: "btn btn-danger btn-lg user_destroy" if current_user.admin? %>
 </div>
+<div class="visit_history">
+  <table>
+    <thead>
+      <tr>
+        <th>予約名</th>
+        <th>予約時間</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <td><%= reservation.name %></td>
+          <td><%= reservation.start_time %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

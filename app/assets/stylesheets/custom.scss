@@ -4,6 +4,7 @@
 @import "font-awesome";
 @import "simple_calendar";
 
+$cBlack: black;
 .cf {
   clear: both;
 }
@@ -362,6 +363,25 @@ footer {
   }
   .user_destroy {
     margin-top: 15px;
+  }
+}
+.visit_history {
+  width: 100%;
+  font-size: 25px;
+  table {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    th {
+      border: 1px solid $cBlack;
+      padding: 5px;
+      background-color: #DBDBDB;
+    }
+    td {
+      border: 1px solid $cBlack;
+      padding: 5px;
+      background-color: #FFEFC7;
+    }
   }
 }
 /* user_edit */
