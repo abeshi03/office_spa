@@ -318,6 +318,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.3)
   rails-i18n
   rspec-rails
+  rubocop
   rubocop-airbnb
   sass-rails (>= 6)
   selenium-webdriver
