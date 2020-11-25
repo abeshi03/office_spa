@@ -5,6 +5,7 @@ class Reservation < ApplicationRecord
   validate :start_time_not_saturday
   validate :time_only
   validates :start_time, uniqueness: { message: 'は他のユーザーが予約しています' }
+  belongs_to :user
   scope :future_reservations, -> do
     where("start_time > ?", Date.today).order(start_time: :desc)
   end
