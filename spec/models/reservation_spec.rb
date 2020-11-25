@@ -55,5 +55,13 @@ RSpec.describe Reservation, type: :model do
     it "All future reservations are displayed" do
       expect(Reservation.future_reservations.length).to eq 4
     end
+
+    it "Up to 2 cases reservations_history" do
+      expect(Reservation.reservations_history(2).length).to eq 2
+    end
+
+    it "Up to 4 cases reservations_history" do
+      expect(Reservation.reservations_history(5).length).to eq 4
+    end
   end
 end
