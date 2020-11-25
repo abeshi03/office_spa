@@ -1,7 +1,11 @@
 <%= provide(:title, "口コミ") %>
 <div class="new_review_page">
   <div class="backcolor">
-    <h2>口コミを投稿しよう！</h2>
+    <% unless current_user.admin? %>
+      <h2>口コミを投稿しよう！</h2>
+    <% else %>
+      <h2>口コミを確認</h2>
+    <% end %>
     <div class="container">
       <% @menus.each do |menu| %>
         <div class="review_page_box">
@@ -10,7 +14,9 @@
             <%= image_tag menu.display_image if menu.image.attached? %>
           </p>
           <div class="review_light">
-            <span><%= link_to "口コミを書く", menu_path(menu.id), class: "btn btn-primary" %></span>
+            <% unless current_user.admin? %>
+              <span><%= link_to "口コミを書く", menu_path(menu.id), class: "btn btn-primary" %></span>
+            <% end %>
             <span><%= link_to "口コミを見る", menu_reviews_path(menu.id), class: "btn btn-primary" %></span>
           </div>
         </div>

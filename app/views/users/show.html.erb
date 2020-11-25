@@ -9,4 +9,6 @@
   <% if current_user.id == @user.id %>
     <%= link_to "編集する", edit_user_path(current_user), class: "btn btn-primary btn-lg edit_btn" %>
   <% end %>
+  <%= link_to "ユーザーを削除", @user, method: :delete, data: { confirm: "本当に削除しますか?" },
+    class: "btn btn-danger btn-lg user_destroy" if current_user.admin? %>
 </div>

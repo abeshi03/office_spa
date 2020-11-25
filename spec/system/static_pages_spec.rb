@@ -23,10 +23,10 @@ RSpec.describe "StaticPages", type: :system do
   end
 
   describe "SatticPages/top" do
-    let!(:user) { create :user }
-    let!(:menu) { create :menu }
-
     context "for user" do
+      let!(:user) { create :user }
+      let!(:menu) { create :menu }
+
       before do
         log_in_as user
       end
@@ -68,6 +68,45 @@ RSpec.describe "StaticPages", type: :system do
       it "new_reservation_path link test" do
         click_on "予約する"
         expect(current_path).to eq "/reservations/new"
+      end
+    end
+
+    context "for admin" do
+      let!(:user)  { create :user }
+      let!(:admin) { create :admin }
+      let!(:menu)  { create :menu }
+
+      before do
+        log_in_as admin
+      end
+
+      it "requests page link test" do
+        click_on "要望確認"
+        expect(current_path).to eq requests_path
+      end
+
+      it "new_manu page link test" do
+        click_on "メニュー投稿"
+        expect(current_path).to eq new_menu_path
+      end
+
+      it "users page link test" do
+        find(".user_link").click
+        expect(current_path).to eq users_path
+        first(".user_name").click
+        expect(current_path).to eq "/users/#{user.id}"
+        click_on "ユーザーを削除"
+        expect(page).to have_content "ユーザーを削除しました"
+      end
+
+      it "reservations page link test" do
+        click_on "予約確認"
+        expect(current_path).to eq reservations_path
+      end
+
+      it "reservations page test for footer" do
+        click_on "予約一覧"
+        expect(current_path).to eq reservations_path
       end
     end
   end

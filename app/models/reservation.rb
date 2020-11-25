@@ -5,6 +5,9 @@ class Reservation < ApplicationRecord
   validate :start_time_not_saturday
   validate :time_only
   validates :start_time, uniqueness: { message: 'は他のユーザーが予約しています' }
+  scope :future_reservations, -> do
+    where("start_time > ?", Date.today).order(start_time: :desc)
+  end
 
   def date_before_start
     errors.add(:start_time, "は過去の日付を選択できません") if start_time < Date.today
