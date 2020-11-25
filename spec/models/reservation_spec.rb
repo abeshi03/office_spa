@@ -17,6 +17,11 @@ RSpec.describe Reservation, type: :model do
     expect(reservation).not_to be_valid
   end
 
+  it "user is nil" do
+    reservation.user = nil
+    expect(reservation).not_to be_valid
+  end
+
   it "start_time is 13:15" do
     reservation.start_time = "2090-10-23 13:15:00"
     expect(reservation).to be_valid
