@@ -1,6 +1,7 @@
 class MenusController < ApplicationController
   before_action :logged_in_user
   before_action :admin_user, only: [:new, :create, :destroy]
+  before_action :set_menu, only: [:show, :destroy]
 
   def index
     @menus = Menu.all
@@ -11,7 +12,6 @@ class MenusController < ApplicationController
   end
 
   def show
-    @menu = Menu.find(params[:id])
     @review = Review.new
   end
 
@@ -27,7 +27,6 @@ class MenusController < ApplicationController
   end
 
   def destroy
-    @menu = Menu.find(params[:id])
     @menu.destroy
     flash[:success] = "メニューを削除しました"
     redirect_to menus_path
@@ -37,5 +36,9 @@ class MenusController < ApplicationController
 
   def menu_params
     params.require(:menu).permit(:name, :description, :category, :image)
+  end
+
+  def set_menu
+    @menu = Menu.find(params[:id])
   end
 end

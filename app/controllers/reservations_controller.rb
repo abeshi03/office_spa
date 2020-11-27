@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  before_action :set_reservation,  only: [:show, :edit, :update, :destroy]
+  before_action :set_reservations, only: [:new, :create]
   before_action :logged_in_user
 
   def index
@@ -9,11 +10,9 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    @reservations = Reservation.all
   end
 
   def create
-    @reservations = Reservation.all
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
     if @reservation.save
@@ -31,6 +30,10 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+  def set_reservations
+    @reservations = Reservation.all
+  end
 
   def set_reservation
     @reservation = Reservation.find(params[:id])
