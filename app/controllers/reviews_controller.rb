@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
   def index
     @menu = Menu.find(params[:menu_id])
-    @reviews = @menu.reviews.order(created_at: :desc)
+    @reviews = @menu.reviews
   end
 
   def create
