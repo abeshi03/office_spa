@@ -10,11 +10,13 @@ class ReservationsController < ApplicationController
   def new
     @reservation = Reservation.new
     @reservations = Reservation.all
+    @user = User.find_by(id: current_user.id)
   end
 
   def create
     @reservations = Reservation.all
     @reservation = Reservation.new(reservation_params)
+    @user = User.find_by(id: current_user.id)
     if @reservation.save
       flash[:success] = "予約を完了しました"
       redirect_to reservations_path
