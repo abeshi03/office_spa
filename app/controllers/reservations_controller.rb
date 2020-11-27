@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user
+  before_action :set_reservations, only: [:new, :create]
 
   def index
     @reservations = Reservation.paginate(page: params[:page])
@@ -9,12 +10,10 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    @reservations = Reservation.all
     @user = User.find_by(id: current_user.id)
   end
 
   def create
-    @reservations = Reservation.all
     @reservation = Reservation.new(reservation_params)
     @user = User.find_by(id: current_user.id)
     if @reservation.save
@@ -32,6 +31,10 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+  def set_reservations
+    @reservations = Reservation.all
+  end
 
   def set_reservation
     @reservation = Reservation.find(params[:id])
