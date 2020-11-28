@@ -1,0 +1,5 @@
+class AddIndexToReservations < ActiveRecord::Migration[6.0]
+  def change
+    add_index :reservations, :user_id
+  end
+end

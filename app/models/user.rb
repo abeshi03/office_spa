@@ -4,7 +4,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :reviews,  dependent: :destroy
   has_many :favorites
-  # 管理者誤って削除された場合メニューが全て削除されては困るのでdependentはつけない
+  has_many :reservations, dependent: :destroy
+  # 管理者が誤って削除された場合メニューが全て削除されては困るのでdependentはつけない
   has_many :menus
   has_many :request_favorite, through: :favorites
   before_save { self.email = email.downcase }

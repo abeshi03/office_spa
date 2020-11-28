@@ -2,12 +2,13 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :destroy, :edit, :update]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: [:destroy, :index]
+  before_action :set_user,       only: [:show, :edit]
   def new
     @user = User.new
   end
 
   def show
-    @user = User.find(params[:id])
+    @reservations = @user.reservations.reservations_history(10)
   end
 
   def create
@@ -22,7 +23,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
@@ -47,6 +47,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
