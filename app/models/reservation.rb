@@ -1,5 +1,6 @@
 class Reservation < ApplicationRecord
   belongs_to :user
+  belongs_to :menu
   validates :user_id, presence: true
   validates :name,    presence: true
   validate :date_before_start
