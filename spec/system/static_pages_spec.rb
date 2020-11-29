@@ -26,6 +26,8 @@ RSpec.describe "StaticPages", type: :system do
     context "for user" do
       let!(:user) { create :user }
       let!(:menu) { create :menu }
+      let!(:menu_second) { create :menu_second }
+      let!(:menu_third) { create :menu_third }
 
       before do
         log_in_as user
@@ -58,10 +60,10 @@ RSpec.describe "StaticPages", type: :system do
 
       it "new_review_path link test" do
         click_on "口コミ"
-        click_on "口コミを書く"
+        first(".review_id_link").click
         expect(current_path).to eq "/menus/#{menu.id}"
         visit new_review_path
-        click_on "口コミを見る"
+        first(".review_see").click
         expect(current_path).to eq "/menus/#{menu.id}/reviews"
       end
 

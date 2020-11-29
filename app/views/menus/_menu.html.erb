@@ -15,7 +15,7 @@
       <div class="menu_btn_link">
         <%= link_to "予約する", new_reservation_path, class: "btn btn-lg btn-primary menu_btn"%>
         <p class="review_link">
-          <%= link_to "口コミを書く", menu_path(menu.id) %>
+          <%= link_to "口コミを書く", menu_path(menu.id), class: "review_right_btn" %>
         </p>
         <p class="revieq_link">
           <%= link_to "口コミを見る", menu_reviews_path(menu.id) %>

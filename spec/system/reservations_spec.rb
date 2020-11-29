@@ -5,6 +5,9 @@ RSpec.describe "Reservations", type: :system do
     context "user" do
       let!(:user) { create :user }
       let!(:reservation) { create :reservation }
+      let!(:menu) { create :menu }
+      let!(:menu_second) { create :menu_second }
+      let!(:menu_third) { create :menu_third }
 
       before do
         log_in_as user
@@ -39,6 +42,9 @@ RSpec.describe "Reservations", type: :system do
     context "admin" do
       let!(:admin) { create :admin }
       let!(:reservation) { create :reservation }
+      let!(:menu) { create :menu }
+      let!(:menu_second) { create :menu_second }
+      let!(:menu_third) { create :menu_third }
 
       before do
         log_in_as admin
