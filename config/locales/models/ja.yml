@@ -27,3 +27,5 @@ ja:
       reservation:
         name: フルネーム
         start_time: 予約日時
+        user_id: ユーザー
+        menu_id: メニュー

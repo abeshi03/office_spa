@@ -10,11 +10,13 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @menus = Menu.all
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
+    @menus = Menu.all
     if @reservation.save
       flash[:success] = "予約を完了しました"
       redirect_to reservations_path
@@ -40,6 +42,6 @@ class ReservationsController < ApplicationController
   end
 
   def reservation_params
-    params.require(:reservation).permit(:name, :start_time)
+    params.require(:reservation).permit(:name, :start_time, :menu_id)
   end
 end
