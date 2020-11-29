@@ -9,11 +9,12 @@
   <div class="field">
     <%= f.label :menu, "メニューを選択してください"%>
     <%= f.select :menu_id,
-      [[@menus.first.name, @menus.first.id],
-      [@menus.second.name, @menus.second.id],
-      [@menus.third.name,  @menus.third.id]],
+      [[menus.first.name, menus.first.id],
+      [menus.second.name, menus.second.id],
+      [menus.third.name,  menus.third.id]],
       { include_blank: '選択してください'} %>
   </div>
+  <!-- 繰り返し処理をするとselect_boxが3つできてしまうため一つずつ記述 -->
 
   <div class="field">
     <%= f.label :start_time, "日時(開始時間は原則13:15 or 19:15になります)" %>
