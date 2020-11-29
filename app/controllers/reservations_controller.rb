@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation,  only: [:show, :edit, :update, :destroy]
   before_action :set_reservations, only: [:new, :create]
+  before_action :set_menus,        only: [:new, :create]
   before_action :logged_in_user
 
   def index
@@ -10,13 +11,11 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    @menus = Menu.all
   end
 
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
-    @menus = Menu.all
     if @reservation.save
       flash[:success] = "予約を完了しました"
       redirect_to reservations_path
@@ -35,6 +34,10 @@ class ReservationsController < ApplicationController
 
   def set_reservations
     @reservations = Reservation.all
+  end
+
+  def set_menus
+    @menus = Menu.all
   end
 
   def set_reservation
