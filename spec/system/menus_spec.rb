@@ -5,6 +5,8 @@ RSpec.describe "Menus", type: :system do
     let!(:user)  { create :user }
     let!(:admin) { create :admin }
     let!(:menu)  { create :menu }
+    let!(:menu_second) { create :menu_second }
+    let!(:menu_third) { create :menu_third }
 
     context "user" do
       before do
@@ -13,12 +15,12 @@ RSpec.describe "Menus", type: :system do
       end
 
       it "menu_path link test" do
-        click_on "口コミを書く"
+        first(".review_right_btn").click
         expect(current_path).to eq menu_path(menu.id)
       end
 
       it "reservation link test" do
-        click_on "予約する"
+        first(".menu_btn").click
         expect(current_path).to eq new_reservation_path
       end
     end
@@ -35,7 +37,7 @@ RSpec.describe "Menus", type: :system do
       end
 
       it "menu destroy" do
-        click_on "メニューを削除する"
+        first(".menu_delete").click
         expect(page).to have_content "メニューを削除しました"
       end
     end

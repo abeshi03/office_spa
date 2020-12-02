@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   before_action :set_reservation,  only: [:show, :edit, :update, :destroy]
   before_action :set_reservations, only: [:new, :create]
+  before_action :set_menus,        only: [:new, :create]
   before_action :logged_in_user
 
   def index
@@ -35,11 +36,15 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all
   end
 
+  def set_menus
+    @menus = Menu.all
+  end
+
   def set_reservation
     @reservation = Reservation.find(params[:id])
   end
 
   def reservation_params
-    params.require(:reservation).permit(:name, :start_time)
+    params.require(:reservation).permit(:name, :start_time, :menu_id)
   end
 end

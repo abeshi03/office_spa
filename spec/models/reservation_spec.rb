@@ -47,6 +47,11 @@ RSpec.describe Reservation, type: :model do
     expect(reservation).not_to be_valid
   end
 
+  it "munu_id is nil" do
+    reservation.menu = nil
+    expect(reservation).not_to be_valid
+  end
+
   describe "scope" do
     let!(:reservations_1) { create :reservation, name: "1", start_time: "2070-10-23 13:15" }
     let!(:reservations_2) { create :reservation, name: "2", start_time: "2070-10-22 13:15" }

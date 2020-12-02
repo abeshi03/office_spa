@@ -9,7 +9,7 @@
       <p class="lead">・メニューは当日ご相談ください</p>
     </div>
     <%= link_to "メニューを確認する", menus_path, class: "menu_verification" %>
-    <%= render 'form', reservation: @reservation %>
+    <%= render 'form', reservation: @reservation, menus: @menus %>
   </div>
   <%= render "calendar_form", reservations: @reservations %>
 </div>

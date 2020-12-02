@@ -3,6 +3,9 @@ require 'rails_helper'
 RSpec.describe "Reservations", type: :request do
   describe "GET /new" do
     let!(:user) { create :user }
+    let!(:menu) { create :menu }
+    let!(:menu_second) { create :menu_second }
+    let!(:menu_third) { create :menu_third }
 
     before do
       sign_in_as user
@@ -16,6 +19,9 @@ RSpec.describe "Reservations", type: :request do
 
   describe "GET /index" do
     let!(:reservation) { create :reservation }
+    let!(:menu) { create :menu }
+    let!(:menu_second) { create :menu_second }
+    let!(:menu_third) { create :menu_third }
     let!(:user)  { create :user }
     let!(:admin) { create :admin }
 
