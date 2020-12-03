@@ -12,4 +12,4 @@
   <%= link_to "ユーザーを削除", @user, method: :delete, data: { confirm: "本当に削除しますか?" },
     class: "btn btn-danger btn-lg user_destroy" if current_user.admin? %>
 </div>
-<%= render "reservations_history", reservaions: @reservations %>
+<%= render "reservations_history", reservaions: @reservations, menus: @menus%>

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @reservations = @user.reservations.reservations_history(10)
+    @menus = Menu.all
   end
 
   def create
