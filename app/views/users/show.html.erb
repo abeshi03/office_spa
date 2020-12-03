@@ -19,6 +19,7 @@
         <tr>
           <th>予約名</th>
           <th>予約時間</th>
+          <th>メニュー</th>
           <th></th>
         </tr>
       </thead>
@@ -27,6 +28,8 @@
           <tr>
             <td><%= reservation.name %></td>
             <td><%= reservation.start_time %></td>
+            <th><%= reservation.menu.name unless reservation.menu.nil? %></th>
+            <!-- メニューテーブルと予約テーブルを後から関連付けしたため過去の予約のメニューがnil classになるのを防ぐため条件分岐 -->
             <td><%= link_to 'キャンセル', reservation, method: :delete, data: { confirm: '本当にキャンセルしますか？' } %></td>
           </tr>
         <% end %>
