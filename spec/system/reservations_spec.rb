@@ -37,15 +37,21 @@ RSpec.describe "Reservations", type: :system do
         expect(page).to have_content "メニューを選択してください"
       end
 
-      it "reservation success!!" do
-        fill_in "フルネーム(必ずご自身のお名前)", with: reservation.name
-        select_date("2030,12,21", from: "日時(開始時間は原則13:15 or 19:15になります)")
-        select_time("13", "15", from: "日時(開始時間は原則13:15 or 19:15になります)")
-        select menu_second.name, from: "reservation_menu_id"
-        click_on "登録する"
+      it "reservation success!! and destroy" do
+        create_reservation
         expect(page).to have_content "予約を完了しました"
+        visit "users/#{user.id}"
+        expect(page).to have_content menu_second.name
+        click_on "キャンセル"
+        expect(page).to have_content "予約を削除しました"
       end
 
+      it "reservation_history menu link test" do
+        create_reservation
+        visit "users/#{user.id}"
+        click_on menu_second.name
+        expect(current_path).to eq menus_path
+      end
       it "menu link test" do
         click_on "メニューを確認する"
         expect(current_path).to eq menus_path
